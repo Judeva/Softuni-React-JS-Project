@@ -16,7 +16,7 @@ class Login extends Component {
                                 </div>
                             </div>
                             <div class="d-flex justify-content-center form_container">
-                                <form>
+                                <form form action='/login' method='post'>
                                     <div class="input-group mb-3">
                                         <div class="input-group-append">
                                             <span class="input-group-text">
@@ -25,7 +25,7 @@ class Login extends Component {
                                                 </svg>
                                             </span>
                                         </div>
-                                        <input type="text" name="" class="form-control input_user" value="" placeholder="username"></input>
+                                        <input type='email' name="email" class="form-control input_user" placeholder="example@email.com"></input>
                                     </div>
                                     <div class="input-group mb-2">
                                         <div class="input-group-append">
@@ -35,7 +35,7 @@ class Login extends Component {
                                                 </svg>
                                             </span>
                                         </div>
-                                        <input type="password" name="" class="form-control input_pass" value="" placeholder="password"></input>
+                                        <input type="password" name="password" class="form-control input_pass"  placeholder="password"></input>
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox">

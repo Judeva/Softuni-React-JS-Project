@@ -25,7 +25,7 @@ class Register extends Component {
                                                 </svg>
                                             </span>
                                         </div>
-                                        <input type="text" name="" class="form-control input_user" value="" placeholder="username"></input>
+                                        <input type="email" name="email" class="form-control input_user"  placeholder="example@email.com"></input>
                                     </div>
                                     <div class="input-group mb-2">
                                         <div class="input-group-append">
@@ -35,7 +35,7 @@ class Register extends Component {
                                                 </svg>
                                             </span>
                                         </div>
-                                        <input type="password" name="" class="form-control input_pass" value="" placeholder="password"></input>
+                                        <input type="password" name="password" class="form-control input_pass"  placeholder="password"></input>
                                     </div>
                                     <div class="input-group mb-2">
                                         <div class="input-group-append">
@@ -45,7 +45,7 @@ class Register extends Component {
                                                 </svg>
                                             </span>
                                         </div>
-                                        <input type="password" name="repassword" class="form-control input_pass" value="" placeholder="re-password"></input>
+                                        <input type="password" name="repassword" class="form-control input_pass"  placeholder="re-password"></input>
                                     </div>
                                    
                                     <div class="d-flex justify-content-center mt-3 login_container">
