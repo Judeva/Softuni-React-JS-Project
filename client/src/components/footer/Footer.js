@@ -5,7 +5,7 @@ class Footer extends Component {
 
     render() {
         return (
-         <p className='footer-paragraph'>&copy; 2021 Cat Chasing Tail </p>
+         <p className='mt-5 mb-3 text-muted'>&copy; 2021 Cat Chasing Tail </p>
         )
     }
 

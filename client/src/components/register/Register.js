@@ -1,7 +1,7 @@
 import { Component } from 'react'
-import './Login.css'
+import './Register.css'
 
-class Login extends Component {
+class Register extends Component {
 
     render() {
         return (
@@ -16,7 +16,7 @@ class Login extends Component {
                                 </div>
                             </div>
                             <div class="d-flex justify-content-center form_container">
-                                <form>
+                                <form action='/register' method='post'>
                                     <div class="input-group mb-3">
                                         <div class="input-group-append">
                                             <span class="input-group-text">
@@ -37,14 +37,19 @@ class Login extends Component {
                                         </div>
                                         <input type="password" name="" class="form-control input_pass" value="" placeholder="password"></input>
                                     </div>
-                                    <div class="form-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customControlInline"></input>
-                                            <label class="custom-control-label" for="customControlInline">Запомни ме</label>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="26" fill="currentColor" class="bi bi-key-fill" viewBox="0 0 16 16">
+                                                    <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                                </svg>
+                                            </span>
                                         </div>
+                                        <input type="password" name="repassword" class="form-control input_pass" value="" placeholder="re-password"></input>
                                     </div>
+                                   
                                     <div class="d-flex justify-content-center mt-3 login_container">
-                                        <button type="button" name="button" class="btn login_btn">Вход</button>
+                                        <button type="button" name="button" class="btn login_btn">Създай профил</button>
                                     </div>
                                 </form>
                             </div>
@@ -56,4 +61,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default Register;
