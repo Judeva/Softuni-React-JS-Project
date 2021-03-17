@@ -1,0 +1,10 @@
+.about-container {
+    color: white;
+    margin: 40px
+}
+
+#about-paragraph {
+    align-content: center;
+    text-align: justify;
+    margin: 40px;
+}

@@ -1,0 +1,19 @@
+.nav-item {
+    color: rgba(255, 255, 255, 0.822);
+    text-decoration: none;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.76);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: rgba(238, 255, 0, 0.808);
+    text-decoration: none;
+    
+}
+
+

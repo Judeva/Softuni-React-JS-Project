@@ -1,23 +1,18 @@
 import { Component } from 'react'
+import './Nav.css'
+import { NavLink } from 'react-router-dom'
 
 class Nav extends Component {
 
     render() {
         return (
-            <ul className="nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Начало</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/login">Вход</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/logout">Изход</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/register">Регистрация</a>
-                </li>
-            </ul>
+            <fragment className="nav">
+                <NavLink to="/" className="nav-link">НАЧАЛО</NavLink>
+                <NavLink to="/about" className="nav-link">ОТНОСНО</NavLink>          
+                <NavLink to="/login" className="nav-link">ВХОД</NavLink>
+                <NavLink to="/logout" className="nav-link">ИЗХОД</NavLink>
+                <NavLink to="/register" className="nav-link">РЕГИСТРАЦИЯ</NavLink>
+            </fragment>
         )
     }
 

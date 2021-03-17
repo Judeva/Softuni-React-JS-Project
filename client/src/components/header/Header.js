@@ -1,17 +1,15 @@
 import { Component } from 'react'
 import Nav from '../Nav'
-
-
+import './Header.css'
 
 class Header extends Component {
 
     render() {
         return (
-         <div className="div-header">
-             <img id='logo' src="https://www.grundfos.com/content/dam/systems/topbar/global/grundfos-logo.png" alt="logo"/>
+         <header className="app-header">
+             <img id='logo' src='https://svgshare.com/i/V59.svg' alt="logo"/>
              <Nav/>
-             
-         </div>
+         </header>
         )
     }
 
