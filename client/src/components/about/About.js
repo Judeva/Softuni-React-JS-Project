@@ -1,4 +1,3 @@
-import { render } from "react-dom";
 import './About.css'
 
 const About = () => {

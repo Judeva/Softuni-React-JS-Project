@@ -1,73 +1,40 @@
-	
-    body,
-    html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        background: #13191b00 !important;
-    }
-    .user_card {
-        height: 400px;
-        width: 350px;
-        margin-top: 120px;
-        margin-bottom: auto;
-        background:  rgba(33, 54, 68, 0.671);;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        padding: 10px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        border-radius: 5px;
-        color: white;
+.login2 {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    align-content: center;
+}
 
-    }
-    .brand_logo_container {
-        position: absolute;
-        height: 180px;
-        width: 180px;
-        top: -75px;
-        border-radius: 50%;
-        background: rgb(15, 25, 31);
-        padding: 20px;
-        text-align: center;
-    }
-    .brand_logo {
-        height: 140px;
-        width: 140px;
-        
-        
-    }
-    .form_container {
-        margin-top: 100px;
-    }
-    .login_btn {
-        width: 100%;
-        background:rgba(238, 255, 0, 0.808)!important;
-        color: rgb(0, 0, 0) !important;
-    }
-    .login_btn:focus {
-        box-shadow: none !important;
-        outline: 0px !important;
-    }
-    .login_container {
-        padding: 0 2rem;
-    }
-    .input-group-text {
-        background:rgba(238, 255, 0, 0.808)!important;
-        color: white !important;
-        border: 0 !important;
-        border-radius: 0.25rem 0 0 0.25rem !important;
-    }
-    .input_user,
-    .input_pass:focus {
-        box-shadow: none !important;
-        outline: 0px !important;
-    }
-    .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-        background-color: #151e2f !important;
-    }
+.login2 label{
+    text-align: left;
+    display: block;
+    color: whitesmoke;
+}
 
-   
+.login2 h2 {
+    font-size: 20px;
+    color: whitesmoke;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+
+.login2 input{
+    width: 100%;
+    padding: 6px 10px;
+    margin: 10px 0;
+    border: 1px solid wheat;
+    box-sizing: border-box;
+    display: block;
+    border-radius: 5px;
+}
+#login-submit-button{
+
+    width:fit-content;
+    background-color: rgb(255, 56, 99);
+    color:white;
+    border: 0;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
