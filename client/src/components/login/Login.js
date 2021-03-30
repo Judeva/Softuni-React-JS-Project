@@ -30,7 +30,7 @@ const Login =()=>{
                 type="submit"
                 id="login-submit-button"
                 />
-                <p>{password}</p>
+               <p>{password}</p>
             </form>
         </div>
     );

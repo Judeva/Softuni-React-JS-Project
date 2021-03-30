@@ -15,7 +15,7 @@ class Home extends Component {
                     <div className="card-body">
                         <h5 className="card-title">ИЗРОДИ 2021</h5>
                         <p className="card-text">Най-добрите предложения за народни представители.</p>
-                        <a href="/addNomination" className="btn btn-primary">Виж класацията</a>
+                        <a href='details/:id' className="btn btn-primary">Виж класацията</a>
                     </div>
                 </div>               
             </div>
