@@ -1,7 +1,9 @@
 const cors = (req, res, next)=>{
-    res.setHeaders('Access-Controll-Allow-Origin', 'http://localhost:3001/');
-    res.setHeaders('Access-Controll-Allow-Methods', 'OPTIONS', 'GET','POST','PUT', 'PATCH','DELETE');
-    res.setHeaders('Access-Controll-Allow-Headers', 'Content-Type, Authorization');
+    res.setHeader('Access-Controll-Allow-Origin', 'http://localhost:3000/');
+    res.setHeader('Access-Controll-Allow-Methods', 'OPTIONS', 'GET','POST','PUT', 'PATCH','DELETE');
+    res.setHeader('Access-Controll-Allow-Headers', 'Content-Type, Authorization');
+
+    next();
 }
 
 module.exports = cors;
