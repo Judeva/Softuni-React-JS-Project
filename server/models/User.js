@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
-const { SALT_ROUNDS} = require('../config/config');
+const { SALT_ROUNDS } = require('../config/config');
 const bcrypt = require('bcrypt');
+
 
 const userSchema = new mongoose.Schema({
     username: {
@@ -13,10 +14,20 @@ const userSchema = new mongoose.Schema({
         required: true,
         minlength: 6,
     },
+    nominations: [{
+        type: mongoose.Types.ObjectId,
+        ref: 'Nomination'
+    }],
 
 });
 
-serScheme.pre('save', function (next) {
+userSchema.methods = {
+    matchPassword: function (password) {
+        return password === this.password;
+    }
+}
+
+userScheme.pre('save', function (next) {
 
     bcrypt.genSalt(SALT_ROUNDS)
         .then(salt => bcrypt.hash(this.password, salt))
@@ -26,10 +37,6 @@ serScheme.pre('save', function (next) {
         });
 });
 
-userSchema.methods = {
-    matchPassword: function (password) {
-        return password === this.password;
-    }
-}
 
-module.exports= mongoose.model('User', userSchema);
+
+module.exports = mongoose.model('User', userSchema);

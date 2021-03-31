@@ -16,17 +16,17 @@ const nominationSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
-    
+
     likes: Number,
 
     creationDate: {
-        type: Date,
+        type: Date.now(),
         required: true
     },
 
     creator: {
         type: mongoose.Types.ObjectId,
-        ref: User
+        ref: 'User'
     }
 
 });
