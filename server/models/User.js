@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { SALT_ROUNDS } = require('../config/config');
+const SALT_ROUNDS = process.env.SALT_ROUNDS;
 const bcrypt = require('bcrypt');
 
 

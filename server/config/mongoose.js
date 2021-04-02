@@ -1,4 +1,4 @@
-const { DB_URI } = require('./config');
+const DB_URI  = process.env.DB_URI;
 const mongoose = require('mongoose');
 
 mongoose.connect(

@@ -5,6 +5,9 @@ const Login =()=>{
 
     const[username, setUsername] = useState();
     const[password, setPassword] = useState();
+
+    console.log(process.env.NODE_ENV);
+    console.log(process.env.PORT);
     
     return(
         <div className='login2'>
