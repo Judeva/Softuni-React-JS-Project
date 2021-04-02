@@ -11,6 +11,9 @@
 # production
 /build
 
+#services
+.cat-chasing-tail-firebase-adminsdk-4xrup-ddc9d168c6.json
+
 # misc
 .DS_Store
 .env.local
