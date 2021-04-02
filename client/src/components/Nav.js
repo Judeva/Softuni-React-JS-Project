@@ -12,6 +12,7 @@ class Nav extends Component {
                 <NavLink to="/login" className="nav-link">ВХОД</NavLink>
                 <NavLink to="/logout" className="nav-link">ИЗХОД</NavLink>
                 <NavLink to="/register" className="nav-link">РЕГИСТРАЦИЯ</NavLink>
+                <NavLink to="/profile" className="nav-link">ПРОФИЛ</NavLink>
             </fragment>
         )
     }

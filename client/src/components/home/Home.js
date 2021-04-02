@@ -9,12 +9,12 @@ class Home extends Component {
 
     render() {
         return (
-            <div class="d-flex justify-content-center h-100">
-                <div className="card" style={{ width: '18rem' }}>
-                    <img src="https://web.static.btv.bg/np_2021.jpg" className="card-img-top" alt="parliament"></img>
+            <div className="d-flex justify-content-center h-100">
+                <div className="card" style={{ heigth: '30rem', width: '15rem' }}>
+                    
                     <div className="card-body">
-                        <h5 className="card-title">ИЗРОДИ 2021</h5>
-                        <p className="card-text">Най-добрите предложения за народни представители.</p>
+                        <h5 className="card-title">ЯДОСАНИ СМЕШНИ КОТКИ</h5>
+                        <p className="card-text">Толкова ядосани, че не можем да спрем да се смеем...</p>
                         <a href='details/:id' className="btn btn-primary">Виж класацията</a>
                     </div>
                 </div>               

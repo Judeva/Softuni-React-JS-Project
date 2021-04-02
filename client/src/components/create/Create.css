@@ -1,0 +1,43 @@
+.create {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    align-content: center;
+    color: rgb(160, 160, 160);
+}
+
+.create h2 {
+    font-size: 20px;
+    color: whitesmoke;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+
+.create input{
+    width: 100%;
+    padding: 6px 10px;
+    margin: 10px 0;
+    border: 1px solid wheat;
+    box-sizing: border-box;
+    display: block;
+    border-radius: 5px;
+    color: rgb(160, 160, 160) ;
+}
+.create button{
+
+    width:fit-content;
+    background-color: rgb(255, 56, 99);
+    color:white;
+    border: 0;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 15px;
+    margin-top: 15px;
+}
+
+.form-input{
+    color: white;
+}
+
+
