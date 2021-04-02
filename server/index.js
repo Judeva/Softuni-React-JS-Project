@@ -14,7 +14,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 app.get('/', (req, res)=>{
-    res.json({message:'it is working'});
+    res.json({message:'It is working'});
 });
 
 app.use('/api', routes);
