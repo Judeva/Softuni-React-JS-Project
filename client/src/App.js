@@ -31,9 +31,7 @@ class App extends Component {
   // }
 
   render() {
-    return (
-
-      
+    return ( 
       <div className="App">
         <Header />
         <Route path='/' exact component={Home} /> 

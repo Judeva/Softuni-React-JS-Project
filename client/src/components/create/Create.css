@@ -39,5 +39,10 @@
 .form-input{
     color: white;
 }
-
+.create img{
+   width: 400px;
+}
+.create textarea{
+    width: 400px;
+}
 
