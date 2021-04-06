@@ -2,22 +2,19 @@ import { useState } from "react";
 import { storage } from '../../firebase/firebase'
 import "./Create.css"
 
+
 const Create = () => {
 
-    const [input, setInput] = useState({
-        title: '',
-        description: '',
-    })
 
     const allInputs = { imgUrl: '' }
     const [imageAsFile, setImageAsFile] = useState('')
     const [imageAsUrl, setImageAsUrl] = useState(allInputs)
 
-    console.log(imageAsFile);
 
     const handleImageAsFile = e => {
-        const image = e.target.files[0]
-        setImageAsFile(imageFile => (image))
+        const image = e.target.files[0];
+        setImageAsFile(image)
+        console.log(image);
     }
 
     const handleFireBaseUpload = e => {
@@ -36,55 +33,52 @@ const Create = () => {
                 .child(imageAsFile.name)
                 .getDownloadURL()
                 .then((fireBaseUrl) => {
-                    setImageAsFile(null);
+                    // setImageAsFile(null);
                     setImageAsUrl(prevObject => ({ ...prevObject, imgUrl: fireBaseUrl }));
                 })
         })
     }
 
-    const handleChange = e => {
-        const { name, value } =e.target;
-        setInput(prevInput=>{
-            return {
-                ...prevInput,
-                [name]:value,
-            }
-        })
+    const handleCreateNomination = e => {
+        e.preventDefault()
+        console.log(imageAsFile);
     }
+
 
     return (
         <div className='create'>
             <h2 className="createTitle">ДОБАВИ ПРЕДЛОЖЕНИЕ</h2>
             <img className='preview-image'
-                src={imageAsUrl.imgUrl || 'https://lh3.googleusercontent.com/proxy/6vvm8GJP9j8OWkCDz6SnmmQAIgLBD9eZrG-u0PuWQc3Dbxq9NFSk1Z2-HoU6uSP5Yo11OOa5_fCUZ6MSCMU7RX0yuhpOhKgdpG8j0N7W5fZxTVeYkWY'}
+                src={imageAsUrl.imgUrl || 'https://firebasestorage.googleapis.com/v0/b/cat-chasing-tail.appspot.com/o/Preview-icon-01.png?alt=media&token=0dde4699-34ef-43a0-9178-366dbba6d68b'}
                 alt="image tag" />
-            <form onSubmit={handleFireBaseUpload} >
+
+            <input
+                type="file"
+                onChange={handleImageAsFile}
+            />
+            <div>
+                <button
+                    onClick={handleFireBaseUpload}
+                    className="btn">ПРИКАЧИ СНИМКА</button>
+            </div>
+            <form onSubmit={handleCreateNomination} >
                 <input
-                    onChange={handleChange}
-                    value={input.title}
                     type="text"
                     name="title-nomination"
                     placeholder="Заглавие..."
                 />
                 <textarea
-                    onChange={handleChange}
-                    value={input.description}
                     type="text"
                     name="description"
                     placeholder="Описание..."
-                ></textarea>
-
-                <input
-                    onChange={handleChange}
-                    type="file"
-                    name="image"
-                    onChange={handleImageAsFile}
-                    className="form-input"
-                />
+                >
+                </textarea>
+                <p>{imageAsUrl.imgUrl||'Download link goes here.'}</p>
                 <div>
-                    <button className="btn">ДОБАВИ</button>
+                    <button className="btn">ДОБАВИ ПРЕДЛОЖЕНИЕ</button>
                 </div>
             </form>
+
 
 
 
@@ -93,3 +87,4 @@ const Create = () => {
 }
 
 export default Create;
+
