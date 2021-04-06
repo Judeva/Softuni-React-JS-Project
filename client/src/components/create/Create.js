@@ -6,10 +6,16 @@ import "./Create.css"
 const Create = () => {
 
 
-    const allInputs = { imgUrl: '' }
-    const [imageAsFile, setImageAsFile] = useState('')
-    const [imageAsUrl, setImageAsUrl] = useState(allInputs)
+    const allInputs = { imgUrl: '' };
+    const [imageAsFile, setImageAsFile] = useState('');
+    const [imageAsUrl, setImageAsUrl] = useState(allInputs);
 
+    const [input, setInput] = useState({
+        title: '',
+        description:'',
+        imageUrl: '',
+        created: ''
+    });
 
     const handleImageAsFile = e => {
         const image = e.target.files[0];
@@ -39,11 +45,22 @@ const Create = () => {
         })
     }
 
+    const handleOnChange = e => {
+        const {name, value} = e.target;
+
+        setInput(prevInput=>{
+            return{
+                ...prevInput,
+                [name]: value
+            }
+        })
+    }
+
     const handleCreateNomination = e => {
         e.preventDefault()
         console.log(imageAsFile);
+        console.log(input)
     }
-
 
     return (
         <div className='create'>
@@ -63,25 +80,25 @@ const Create = () => {
             </div>
             <form onSubmit={handleCreateNomination} >
                 <input
+                    onChange={handleOnChange}
                     type="text"
-                    name="title-nomination"
+                    name="title"
                     placeholder="Заглавие..."
+                    value= {input.title}
                 />
                 <textarea
+                    onChange={handleOnChange}
                     type="text"
                     name="description"
                     placeholder="Описание..."
+                    value={input.description}
                 >
                 </textarea>
-                <p>{imageAsUrl.imgUrl||'Download link goes here.'}</p>
+                <p>{imageAsUrl.imgUrl || 'Download link goes here.'}</p>
                 <div>
                     <button className="btn">ДОБАВИ ПРЕДЛОЖЕНИЕ</button>
                 </div>
             </form>
-
-
-
-
         </div>
     );
 }
