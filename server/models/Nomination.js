@@ -20,7 +20,7 @@ const nominationSchema = new mongoose.Schema({
 
     created: {
         type: String,
-        required: true
+        // required: true
     },
 
     // creator: {

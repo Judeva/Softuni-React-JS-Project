@@ -13,7 +13,7 @@ const Create = () => {
 
     const [input, setInput] = useState({
         title: '',
-        description:'',
+        description: '',
     });
 
     const handleImageAsFile = e => {
@@ -45,10 +45,10 @@ const Create = () => {
     }
 
     const handleOnChange = e => {
-        const {name, value} = e.target;
+        const { name, value } = e.target;
 
-        setInput(prevInput=>{
-            return{
+        setInput(prevInput => {
+            return {
                 ...prevInput,
                 [name]: value
             }
@@ -57,21 +57,36 @@ const Create = () => {
 
     const handleCreateNomination = e => {
         e.preventDefault()
-     
+
+        console.log('hello from handleCreate')
+
         const newNomination = {
             title: input.title,
             description: input.description,
             imageUrl: imageAsUrl.imgUrl,
-            created: imageAsFile.lastModifiedDate
+            created: String(imageAsFile.lastModifiedDate)
         }
 
-         axios.post('/create', newNomination)
-         .then(createdNomination=>{
-             console.log(createdNomination);
 
-         }).catch(err=>{
-             console.log(err);
-         })
+
+        axios.post('/create', newNomination )
+        .then(res=>{console.log(res)})
+        .catch(err=>{console.log(err)})
+
+        // console.log(newNomination);
+        // fetch('http://localhost:5000/create', {
+        //     method: 'POST',
+        //     header: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(newNomination)
+
+
+        // }).then(res => {
+        //     console.log(res);
+        // }).catch(err => {
+        //     console.log(err)
+        // })
     }
 
     return (
@@ -96,7 +111,7 @@ const Create = () => {
                     type="text"
                     name="title"
                     placeholder="Заглавие..."
-                    value= {input.title}
+                    value={input.title}
                 />
                 <textarea
                     onChange={handleOnChange}
@@ -106,7 +121,7 @@ const Create = () => {
                     value={input.description}
                 >
                 </textarea>
-                 <div>
+                <div>
                     <button className="btn">ДОБАВИ ПРЕДЛОЖЕНИЕ</button>
                 </div>
             </form>
