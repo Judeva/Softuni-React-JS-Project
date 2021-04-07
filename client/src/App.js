@@ -12,6 +12,7 @@ import Home from './components/home/Home';
 import Nomination from './components/nomination/Nomination';
 import './App.css';
 import Create from './components/create/Create';
+import Profile from './components/profile/Profile';
 
 class App extends Component {
 
@@ -40,6 +41,7 @@ class App extends Component {
         <Route path='/register' component={Register} />
         <Route path='/nomination' component={Nomination} />
         <Route path='/create' component={Create} />
+        <Route path='/profile' component={Profile} />
         {/* <Route render={() => <h1 >Error Page</h1>} /> */}
         <Footer />
       </div>

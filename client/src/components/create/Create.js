@@ -65,11 +65,10 @@ const Create = () => {
             created: imageAsFile.lastModifiedDate
         }
 
-        console.log(newNomination);
          axios.post('/create', newNomination)
          .then(createdNomination=>{
              console.log(createdNomination);
-             
+
          }).catch(err=>{
              console.log(err);
          })
