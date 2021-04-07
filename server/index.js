@@ -1,23 +1,20 @@
 require('dotenv').config();
-
 const express = require('express');
 const cors = require('cors');
-
 const PORT = process.env.PORT || 3000;
 const mongoose = require('mongoose');
-
 const { Storage } = require('@google-cloud/storage');
 const multer = require('multer');
-
 const routes = require('./routes');
 const app = express();
+const Nomination = require('./models/Nomination')
 
 require('./config/mongoose');
 
-app.use(cors());
+app.use(cors({ origin: 'http://localhost:3000' }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use('/', routes);
 app.get('/', (req, res) => {
     res.json({ message: 'It is working' });
 });
@@ -74,7 +71,31 @@ app.post('/api/upload', uploader.single('image'), async (req, res, next) => {
     }
 });
 
-app.use('/api', routes);
+
+
+app.post('/create', (req, res) => {
+    console.log(req.body)
+    console.log('hello from nominationController')
+    const { title, description, imageUrl, created } = req.body;
+
+    let nomination = {
+        title,
+        description,
+        imageUrl,
+        created
+    }
+
+    Nomination.create({ ...nomination })
+        .then(createdNomination => {
+            console.log(createdNomination)
+            res.status(201).json({ _id: createdNomination._id })
+        }).catch(err => {
+            console.log(err);
+        })
+
+})
+
+
 
 
 app.listen(PORT, console.log.bind(console, `Server is listening on port ${PORT}...`));

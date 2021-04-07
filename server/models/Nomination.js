@@ -7,10 +7,9 @@ const nominationSchema = new mongoose.Schema({
     },
     description: {
         type: String,
-        required: true
+       
     },
-    category: String,
-
+    
     imageUrl:
     {
         type: String,
@@ -19,15 +18,15 @@ const nominationSchema = new mongoose.Schema({
 
     likes: Number,
 
-    creationDate: {
-        type: Date.now(),
+    created: {
+        type: String,
         required: true
     },
 
-    creator: {
-        type: mongoose.Types.ObjectId,
-        ref: 'User'
-    }
+    // creator: {
+    //     type: mongoose.Types.ObjectId,
+    //     ref: 'User'
+    // }
 
 });
 

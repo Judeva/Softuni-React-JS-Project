@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { storage } from '../../firebase/firebase'
-import "./Create.css"
+import { storage } from '../../firebase/firebase';
+import axios from 'axios';
+import "./Create.css";
 
 
 const Create = () => {
@@ -13,8 +14,6 @@ const Create = () => {
     const [input, setInput] = useState({
         title: '',
         description:'',
-        imageUrl: '',
-        created: ''
     });
 
     const handleImageAsFile = e => {
@@ -58,8 +57,22 @@ const Create = () => {
 
     const handleCreateNomination = e => {
         e.preventDefault()
-        console.log(imageAsFile);
-        console.log(input)
+     
+        const newNomination = {
+            title: input.title,
+            description: input.description,
+            imageUrl: imageAsUrl.imgUrl,
+            created: imageAsFile.lastModifiedDate
+        }
+
+        console.log(newNomination);
+         axios.post('/create', newNomination)
+         .then(createdNomination=>{
+             console.log(createdNomination);
+             
+         }).catch(err=>{
+             console.log(err);
+         })
     }
 
     return (
@@ -94,8 +107,7 @@ const Create = () => {
                     value={input.description}
                 >
                 </textarea>
-                <p>{imageAsUrl.imgUrl || 'Download link goes here.'}</p>
-                <div>
+                 <div>
                     <button className="btn">ДОБАВИ ПРЕДЛОЖЕНИЕ</button>
                 </div>
             </form>
