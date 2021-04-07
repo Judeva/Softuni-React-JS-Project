@@ -1,7 +1,8 @@
-const router = require('express').Router();
+const express = require('express');
+let router = express.Router();
 const Nomination = require('../models/Nomination');
 
-router.post('/create', (req, res)=>{
+router.post('/', (req, res)=>{
 
     console.log(req.body)
     console.log('hello from nominationController')
@@ -17,6 +18,8 @@ router.post('/create', (req, res)=>{
     Nomination.create({...nomination})
     .then(createdNomination=>{
         res.status(201).json({_id: createdNomination._id})
+    }).catch(err=>{
+        console.log(err);
     })
 
     res.json({ok: true});

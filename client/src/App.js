@@ -1,6 +1,6 @@
 import { Component } from 'react';
 
-import { Route, Link, NavLink, Redirect, Switch } from 'react-router-dom';
+import { Route, Redirect, Switch } from 'react-router-dom';
 //import * as nominationsService from './services/nominationsService';
 
 import Footer from './components/footer/Footer';

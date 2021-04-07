@@ -5,9 +5,9 @@ const About = () => {
 
     return (
         <div className='about-container' >
-            <h1 class="display-1">ОТНОСНО</h1>
-            <h1 class="display-2">CAT CHASING TAIL</h1>
-            <div class="container-sm">
+            <h1 className="display-1">ОТНОСНО</h1>
+            <h1 className="display-2">CAT CHASING TAIL</h1>
+            <div className="container-sm">
                 <div className="row justify-content-sm-center">
                     <div className="col-5" id='about-col1'>
                         <p className='about-paragraph'>Защо котките гонят опашките си? Защото им е скучно, разбира се. И на нас ни е скучно. Това е сайт, в който класираме смешни, изумителни снимки, реплики, хора, събития и всичко което може да бъде класирано и да му се пoсмеем. Не си гонете опашките, вече имате Cat Chasing Tail! </p>

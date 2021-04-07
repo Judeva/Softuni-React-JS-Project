@@ -9,7 +9,7 @@ class Nomination extends Component {
 
     render() {
         return (
-            <div className="card" style="width: 18rem;">
+            <div className="card" style={{width: '18rem'}}>
                 <img src="https://web.static.btv.bg/np_2021.jpg" className="card-img-top" alt="parliament"></img>
                 <div className="card-body">
                     <h5 className="card-title">Card title</h5>

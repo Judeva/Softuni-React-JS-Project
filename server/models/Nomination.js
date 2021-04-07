@@ -16,7 +16,7 @@ const nominationSchema = new mongoose.Schema({
         require: true,
     },
 
-    likes: Number,
+    // likes: Number,
 
     created: {
         type: String,
