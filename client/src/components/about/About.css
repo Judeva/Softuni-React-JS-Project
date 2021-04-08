@@ -1,8 +1,14 @@
 .about-container {
     color: white;
-    margin-bottom: 40px;
-    margin-top: 40px;
+    background: url(http://salehriaz.com/404Page/img/bg_purple.png);
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: left top;
+    height: 100%;
+    overflow: hidden;
 }
+
+
 
 .about-paragraph {
     text-align: justify;

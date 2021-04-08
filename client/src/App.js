@@ -1,6 +1,6 @@
 import { Component } from 'react';
-
 import { Route, Redirect, Switch } from 'react-router-dom';
+import './App.css';
 //import * as nominationsService from './services/nominationsService';
 
 import Footer from './components/footer/Footer';
@@ -10,9 +10,9 @@ import Login from './components/login/Login';
 import Register from './components/register/Register';
 import Home from './components/home/Home';
 import Nomination from './components/nomination/Nomination';
-import './App.css';
 import Create from './components/create/Create';
 import Profile from './components/profile/Profile';
+import Error404 from './components/404/Error404';
 
 class App extends Component {
 
@@ -34,6 +34,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header loggedIn={this.state.loggedIn} />
+        <Switch>
         <Route path='/' exact render={props => (<Home {...props} loggedIn={this.state.loggedIn}/>)} />
         <Route path='/login' component={Login} />
         <Route path='/about' component={About} />
@@ -41,7 +42,8 @@ class App extends Component {
         <Route path='/nomination' component={Nomination} />
         <Route path='/create' component={Create} />
         <Route path='/profile' render={props => (<Profile {...props} loggedIn={this.state.loggedIn} />)} />
-        {/* <Route render={() => <h1 >Error Page</h1>} /> */}
+        <Route path='*' extact={true} render= {()=><Error404/>}/>
+        </Switch>
         <Footer />
       </div>
     )
