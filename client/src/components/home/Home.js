@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import { Link } from 'react-router-dom'
 import './Home.css'
 
 class Home extends Component {
@@ -7,20 +8,35 @@ class Home extends Component {
         super(props);
     }
 
-    
+
     render() {
         return (
-            <div className="d-flex justify-content-center h-100">
+            <div className='home'>
+               
 
-                
-                <div className="card" style={{ heigth: '30rem', width: '15rem' }}>
-                
-                    <div className="card-body">
-                        <h5 className="card-title">ЯДОСАНИ СМЕШНИ КОТКИ</h5>
-                        <p className="card-text">Толкова ядосани, че не можем да спрем да се смеем...</p>
-                        <a href='details/:id' className="btn btn-primary">Виж класацията</a>
+                    <div className="stars">
+
+                        <div className="central-body">
+
+                        </div>
+                        <div className="objects">
+                            <img className="object_rocket" src="http://salehriaz.com/404Page/img/rocket.svg" width="40px" />
+                            <div className="earth-moon">
+                                <img className="object_earth" src="http://salehriaz.com/404Page/img/earth.svg" width="100px" />
+                                <img className="object_moon" src="http://salehriaz.com/404Page/img/moon.svg" width="80px" />
+                            </div>
+
+                        </div>
+                        <div className="glowing_stars">
+                            <div className="star"></div>
+                            <div className="star"></div>
+                            <div className="star"></div>
+                            <div className="star"></div>
+                            <div className="star"></div>
+                        </div>
+
                     </div>
-                </div>               
+
             </div>
         )
     }

@@ -6,10 +6,14 @@
     background-position: left top;
     height: 100%;
     overflow: hidden;
+      
 }
 
-
-
-.about-paragraph {
-    text-align: justify;
+.about-container p{
+    width: 35%;
+    margin: auto;
+    
+}
+.about-container h4{
+margin-bottom: 30px;
 }

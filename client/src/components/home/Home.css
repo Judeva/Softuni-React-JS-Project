@@ -1,3 +1,10 @@
-.card{
-    background-image: 'https://i.pinimg.com/564x/b5/15/95/b51595de229aaa7712279a7653c307f0.jpg';
+.home{
+    
+    background: url(http://salehriaz.com/404Page/img/bg_purple.png);
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: left top;
+    height: auto;
+    overflow: hidden;
+    
 }

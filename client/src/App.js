@@ -42,6 +42,7 @@ class App extends Component {
         <Route path='/nomination' component={Nomination} />
         <Route path='/create' component={Create} />
         <Route path='/profile' render={props => (<Profile {...props} loggedIn={this.state.loggedIn} />)} />
+       
         <Route path='*' extact={true} render= {()=><Error404/>}/>
         </Switch>
         <Footer />

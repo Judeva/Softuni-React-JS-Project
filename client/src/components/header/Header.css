@@ -2,10 +2,11 @@
     background-color: #273d4bda;
     /* min-height: 100vh;
     max-height: 200vh; */
-    display: flex;
+    display:flex;
     flex-direction: column;
     align-items: center;
     font-size: calc(18px);
+    height: max-content;
     
   }
 
