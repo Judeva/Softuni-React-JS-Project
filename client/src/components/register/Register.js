@@ -12,7 +12,7 @@ const Register = () => {
             <div className="bg-purple">
 
                 <div className='register'>
-                    <h2 className="registerTitle">РЕГИСТРАЦИЯ</h2>
+                    <h2 className="display-2">REGISTER</h2>
                     <form>
                         <label
                             htmlFor="Username"
@@ -59,7 +59,7 @@ const Register = () => {
                             <img className="object_moon" src="http://salehriaz.com/404Page/img/moon.svg" width="80px" />
                         </div>
                         <div className="box_astronaut">
-                            <img className="object_astronaut" src="http://salehriaz.com/404Page/img/astronaut.svg" width="140px" />
+                            <img className="object_astronaut" src="https://firebasestorage.googleapis.com/v0/b/cat-chasing-tail.appspot.com/o/cat-space-01.svg?alt=media&token=b08f7866-6c14-4c1c-83f2-6043746ea5ff" width="140px" />
                         </div>
                     </div>
                     <div className="glowing_stars">

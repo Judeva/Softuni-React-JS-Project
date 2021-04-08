@@ -69,9 +69,9 @@ const Create = () => {
 
 
 
-        axios.post('/create', newNomination )
-        .then(res=>{console.log(res)})
-        .catch(err=>{console.log(err)})
+        axios.post('/create', newNomination)
+            .then(res => { console.log(res) })
+            .catch(err => { console.log(err) })
 
         // console.log(newNomination);
         // fetch('http://localhost:5000/create', {
@@ -90,42 +90,71 @@ const Create = () => {
     }
 
     return (
-        <div className='create'>
-            <h2 className="createTitle">ДОБАВИ ПРЕДЛОЖЕНИЕ</h2>
-            <img className='preview-image'
-                src={imageAsUrl.imgUrl || 'https://firebasestorage.googleapis.com/v0/b/cat-chasing-tail.appspot.com/o/Preview-icon-01.png?alt=media&token=0dde4699-34ef-43a0-9178-366dbba6d68b'}
-                alt="image tag" />
 
-            <input
-                type="file"
-                onChange={handleImageAsFile}
-            />
-            <div>
-                <button
-                    onClick={handleFireBaseUpload}
-                    className="btn">ПРИКАЧИ СНИМКА</button>
-            </div>
-            <form onSubmit={handleCreateNomination} >
+        <div className="bg-purple">
+            <div className='create'>
+                <h4 className="display-6">ДОБАВИ ПРЕДЛОЖЕНИЕ</h4>
+                <img className='preview-image'
+                    src={imageAsUrl.imgUrl}
+                    alt="Preview here" />
                 <input
-                    onChange={handleOnChange}
-                    type="text"
-                    name="title"
-                    placeholder="Заглавие..."
-                    value={input.title}
+                    type="file"
+                    onChange={handleImageAsFile}
                 />
-                <textarea
-                    onChange={handleOnChange}
-                    type="text"
-                    name="description"
-                    placeholder="Описание..."
-                    value={input.description}
-                >
-                </textarea>
                 <div>
-                    <button className="btn">ДОБАВИ ПРЕДЛОЖЕНИЕ</button>
+                    <button
+                        onClick={handleFireBaseUpload}
+                        className="btn">ПРИКАЧИ СНИМКА</button>
                 </div>
-            </form>
+                <form onSubmit={handleCreateNomination} >
+                    <input
+                        onChange={handleOnChange}
+                        type="text"
+                        name="title"
+                        placeholder="Заглавие..."
+                        value={input.title}
+                    />
+                    <textarea
+                        onChange={handleOnChange}
+                        type="text"
+                        name="description"
+                        placeholder="Описание..."
+                        value={input.description}
+                    >
+                    </textarea>
+                    <div>
+                        <button className="btn">ДОБАВИ ПРЕДЛОЖЕНИЕ</button>
+                    </div>
+                </form>
+            </div>
+            <div className="stars">
+
+                <div className="central-body">
+
+                </div>
+                <div className="objects">
+                    <img className="object_rocket" src="http://salehriaz.com/404Page/img/rocket.svg" width="40px" />
+                    <div className="earth-moon">
+                        <img className="object_earth" src="http://salehriaz.com/404Page/img/earth.svg" width="100px" />
+                        <img className="object_moon" src="http://salehriaz.com/404Page/img/moon.svg" width="80px" />
+                    </div>
+                    <div className="box_astronaut">
+                        <img className="object_astronaut" src="https://firebasestorage.googleapis.com/v0/b/cat-chasing-tail.appspot.com/o/cat-space-01.svg?alt=media&token=b08f7866-6c14-4c1c-83f2-6043746ea5ff" width="140px" />
+                    </div>
+                </div>
+                <div className="glowing_stars">
+                    <div className="star"></div>
+                    <div className="star"></div>
+                    <div className="star"></div>
+                    <div className="star"></div>
+                    <div className="star"></div>
+
+                </div>
+
+            </div>
+
         </div>
+
     );
 }
 

@@ -12,8 +12,9 @@
 .about-container p{
     width: 35%;
     margin: auto;
-    
+    text-align: justify;    
 }
 .about-container h4{
+    margin-top: 50px;
 margin-bottom: 30px;
 }
