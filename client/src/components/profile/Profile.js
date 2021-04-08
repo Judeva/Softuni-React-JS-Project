@@ -2,7 +2,9 @@ import { useState } from "react";
 import{Link} from 'react-router-dom'
 import './Profile.css';
 
-const Profile = () => {
+const Profile = ({
+    loggedIn
+}) => {
 
 
 
@@ -13,7 +15,7 @@ const Profile = () => {
             <div className="row">
                 <div className="column">
                     <h4>ДАННИ ЗА ПОТРЕБИТЕЛЯ</h4>
-
+                    <h5>STATUS: {loggedIn}</h5>
                 </div>
                 <div className="column">
                 <h4>ГАЛЕРИЯ НА ПОТРЕБИТЕЛЯ</h4>

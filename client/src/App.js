@@ -20,28 +20,27 @@ class App extends Component {
     super(props);
 
     this.state = {
-       nominations: []
+      loggedIn: 'NOT',
+      user: {},
+      nominations: []
     }
   }
 
   // componentDidMount() {
-  //   nominationsService.getAll()
-  //     .then(posts => {
-  //       this.setState({ posts })
-  //     });
+  //  this.setState(this.state.loggedIn)
   // }
 
   render() {
-    return ( 
+    return (
       <div className="App">
-        <Header />
-        <Route path='/' exact component={Home} /> 
+        <Header loggedIn={this.state.loggedIn} />
+        <Route path='/' exact render={props => (<Home {...props} loggedIn={this.state.loggedIn}/>)} />
         <Route path='/login' component={Login} />
         <Route path='/about' component={About} />
         <Route path='/register' component={Register} />
         <Route path='/nomination' component={Nomination} />
         <Route path='/create' component={Create} />
-        <Route path='/profile' component={Profile} />
+        <Route path='/profile' render={props => (<Profile {...props} loggedIn={this.state.loggedIn} />)} />
         {/* <Route render={() => <h1 >Error Page</h1>} /> */}
         <Footer />
       </div>

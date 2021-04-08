@@ -4,10 +4,15 @@ import './Header.css'
 
 class Header extends Component {
 
+    constructor(props){
+        super(props);
+    }
+
     render() {
         return (
          <header className="app-header">
              <img id='logo' src='https://svgshare.com/i/V59.svg' alt="logo"/>
+             <h5>{this.props.loggedIn}</h5>
              <Nav/>
          </header>
         )
