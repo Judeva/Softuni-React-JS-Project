@@ -31,21 +31,25 @@ class App extends Component {
   //  this.setState(this.state.loggedIn)
   // }
 
-  
+
   render() {
     return (
       <div className="App">
         <Header loggedIn={this.state.loggedIn} />
         <Switch>
-        <Route path='/' exact render={props => (<Home {...props} loggedIn={this.state.loggedIn}/>)} />
-        <Route path='/login' component={Login} />
-        <Route path='/about' component={About} />
-        <Route path='/register' component={Register} />
-        <Route path='/nomination' component={Nomination} />
-        <Route path='/create' component={Create} />
-        <Route path='/profile' render={props => (<Profile {...props} loggedIn={this.state.loggedIn} />)} />
-       
-        <Route path='*' extact={true} render= {()=><Error404/>}/>
+          <Route path='/' exact render={props => (<Home {...props} loggedIn={this.state.loggedIn} />)} />
+          <Route path='/login' component={Login} />
+          <Route path='/about' component={About} />
+          <Route path='/register' component={Register} />
+          <Route path='/nomination' component={Nomination} />
+          <Route path='/create' component={Create} />
+          <Route path='/profile' render={props => (<Profile {...props} loggedIn={this.state.loggedIn} />)} />
+          <Route path='/logout'
+            render={props => {
+            auth.signOut(); 
+            return (<Redirect to='/' />)
+            }} />
+          <Route path='*' extact={true} render={() => <Error404 />} />
         </Switch>
         <Footer />
       </div>
