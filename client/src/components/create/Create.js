@@ -4,7 +4,9 @@ import axios from 'axios';
 import "./Create.css";
 
 
-const Create = () => {
+const Create = ({
+    history
+}) => {
 
 
     const allInputs = { imgUrl: '' };
@@ -68,69 +70,48 @@ const Create = () => {
         }
 
         axios.post('/create', newNomination)
-            .then(res => { console.log(res) })
+            .then(res => {
+                history.push('/'); //TODO redirect to profile page;
+                console.log(res)
+            })
             .catch(err => { console.log(err) })
     }
 
     return (
-
-        <div className="bg-purple">
-            <div className="stars">           
-                <div className="central-body">
-                <div className='create'>
-                    <h4 className="display-6">ADD PICTURE</h4>
-                    <img className='preview-image'
-                        src={imageAsUrl.imgUrl}
-                        alt="Preview here" />
-                    <input
-                        type="file"
-                        onChange={handleImageAsFile}
-                    />
-                    <div>
-                        <button
-                            onClick={handleFireBaseUpload}
-                            className="btn-go-home">UPLOAD PICTURE</button>
-                    </div>
-                    <form onSubmit={handleCreateNomination} >
-                        <input
-                            onChange={handleOnChange}
-                            type="text"
-                            name="title"
-                            placeholder="Заглавие..."
-                            value={input.title}
-                        />
-                        <textarea
-                            onChange={handleOnChange}
-                            type="text"
-                            name="description"
-                            placeholder="Описание..."
-                            value={input.description}
-                        >
-                        </textarea>
-                        <div>
-                            <button className="btn-go-home">ADD SUBMITION</button>
-                        </div>
-                    </form>
-                </div>
-                </div>
-                <div className="objects">
-                    <img className="object_rocket" src="http://salehriaz.com/404Page/img/rocket.svg" width="40px" />
-                    <div className="earth-moon">
-                        <img className="object_earth" src="http://salehriaz.com/404Page/img/earth.svg" width="100px" />
-                        <img className="object_moon" src="http://salehriaz.com/404Page/img/moon.svg" width="80px" />
-                    </div>
-                    <div className="box_astronaut">
-                        <img className="object_astronaut" src="https://firebasestorage.googleapis.com/v0/b/cat-chasing-tail.appspot.com/o/cat-space-01.svg?alt=media&token=b08f7866-6c14-4c1c-83f2-6043746ea5ff" width="140px" />
-                    </div>
-                </div>
-                <div className="glowing_stars">
-                    <div className="star"></div>
-                    <div className="star"></div>
-                    <div className="star"></div>
-                    <div className="star"></div>
-                    <div className="star"></div>
-                </div>
+        <div className='create'>
+            <h4 className="display-6">ADD PICTURE</h4>
+            <img className='preview-image'
+                src={imageAsUrl.imgUrl}
+                alt="Preview here" />
+            <input
+                type="file"
+                onChange={handleImageAsFile}
+            />
+            <div>
+                <button
+                    onClick={handleFireBaseUpload}
+                    className="btn-go-home">UPLOAD PICTURE</button>
             </div>
+            <form onSubmit={handleCreateNomination} >
+                <input
+                    onChange={handleOnChange}
+                    type="text"
+                    name="title"
+                    placeholder="Заглавие..."
+                    value={input.title}
+                />
+                <textarea
+                    onChange={handleOnChange}
+                    type="text"
+                    name="description"
+                    placeholder="Описание..."
+                    value={input.description}
+                >
+                </textarea>
+                <div>
+                    <button className="btn-go-home">ADD SUBMITION</button>
+                </div>
+            </form>
         </div>
     );
 }
