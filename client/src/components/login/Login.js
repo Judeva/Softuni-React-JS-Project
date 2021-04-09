@@ -2,7 +2,9 @@ import { useState } from "react";
 import {auth} from '../../firebase/firebase'
 import './Login.css';
 
-const Login = () => {
+const Login = ({
+    history
+}) => {
 
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
@@ -15,7 +17,7 @@ const Login = () => {
         
         auth.signInWithEmailAndPassword(username, password)
         .then(userCredentials=>{
-            console.log(userCredentials);
+            history.push('/')
         }).catch(err=>{
             console.log(err);
         })
