@@ -13,17 +13,23 @@ const Create = ({
     const [imageAsFile, setImageAsFile] = useState('');
     const [imageAsUrl, setImageAsUrl] = useState(allInputs);
 
+    const [error, setError] = useState(null);
     const [input, setInput] = useState({
         title: '',
         description: '',
     });
 
+    const types =['image/png', 'image/jpeg'];
+
     const handleImageAsFile = e => {
         const image = e.target.files[0];
 
-        if (image) {
+        if (image&&types.includes(image.type)) {
             setImageAsFile(image)
             console.log(image);
+        }else{
+            setImageAsFile(null);
+            setError('Please select an image file (png or jpeg!)')
         }
 
     }
