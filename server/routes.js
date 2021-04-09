@@ -14,5 +14,6 @@ router.get('/', (req, res) => {
 router.use('/api/upload', apiController)
 router.use('/register', authController);
 router.use('/create', nominationController);
+router.use('/nominations', nominationController);
 
 module.exports= router;

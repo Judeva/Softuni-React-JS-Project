@@ -22,6 +22,11 @@ router.post('/', (req, res) => {
             console.log(err);
         })
 
+});
+
+router.get('/', (req, res)=>{
+    console.log(req.body);
+    
 })
 
 
