@@ -11,9 +11,7 @@ class Header extends Component {
     render() {
         return (
          <header className="app-header">
-             {/* <img id='logo' src='https://svgshare.com/i/V59.svg' alt="logo"/> */}
-             
-             <Nav/>
+            <Nav/>
          </header>
         )
     }

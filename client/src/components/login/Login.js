@@ -12,9 +12,7 @@ const Login = ({
     const onLoginSubmitHandler =(e)=>{
 
         e.preventDefault();
-        const username= e.target.username.value;
-        const password= e.target.password.value;
-        
+              
         auth.signInWithEmailAndPassword(username, password)
         .then(userCredentials=>{
             history.push('/')

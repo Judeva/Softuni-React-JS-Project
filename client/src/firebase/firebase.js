@@ -16,15 +16,6 @@ firebase.initializeApp(firebaseConfig);
 const storage = firebase.storage();
 const auth = firebase.auth();
 
-auth.onAuthStateChanged(user => {
-  if (user) {
-    console.log('Logged in:');
-    console.log(user);
-  } else {
-    console.log('Logged out:');
-  }
-})
-
 export {
   auth, storage, firebase as default
 }
