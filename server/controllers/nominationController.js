@@ -1,10 +1,13 @@
+const { response } = require('express');
 const express = require('express');
 let router = express.Router();
 const Nomination = require('../models/Nomination');
+const nominationService = require('../services/nominationService');
+
 
 router.post('/', (req, res) => {
     
-    console.log(req.body)
+    
     const { title, description, imageUrl, created } = req.body;
 
     let nomination = {
@@ -25,8 +28,10 @@ router.post('/', (req, res) => {
 });
 
 router.get('/', (req, res)=>{
-    console.log(req.body);
-    
+     nominationService.getAll()
+    .then(data=>{
+        res.send(data);
+    })
 })
 
 
