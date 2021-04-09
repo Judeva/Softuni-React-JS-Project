@@ -1,7 +1,5 @@
 .about-container {
-    color: white;
-
-      
+    color: white;     
 }
 
 .about-container p{
@@ -11,5 +9,5 @@
 }
 .about-container h4{
     margin-top: 50px;
-margin-bottom: 30px;
+    margin-bottom: 30px;
 }

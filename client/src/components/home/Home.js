@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom'
+import Nomination from '../nomination/Nomination'
 import './Home.css'
 
 class Home extends Component {
@@ -23,8 +24,8 @@ class Home extends Component {
 
     render() {
         return (
-            <div>
-                
+            <div className="home-container">
+                <Nomination/>
             </div>
 
         )

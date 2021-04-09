@@ -20,8 +20,12 @@ const Create = ({
 
     const handleImageAsFile = e => {
         const image = e.target.files[0];
-        setImageAsFile(image)
-        console.log(image);
+
+        if (image) {
+            setImageAsFile(image)
+            console.log(image);
+        }
+
     }
 
     const handleFireBaseUpload = e => {
