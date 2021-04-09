@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import './App.css';
+import { auth } from './firebase/firebase';
 //import * as nominationsService from './services/nominationsService';
 
 import Footer from './components/footer/Footer';
@@ -30,6 +31,7 @@ class App extends Component {
   //  this.setState(this.state.loggedIn)
   // }
 
+  
   render() {
     return (
       <div className="App">

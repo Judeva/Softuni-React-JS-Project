@@ -7,10 +7,11 @@ const Register = () => {
     const [password, setPassword] = useState();
 
     return (
-        <div className='home'>
 
-            <div className="bg-purple">
 
+        <div className="bg-purple">
+            <div className="stars">
+                <div className="central-body">
                 <div className='register'>
                     <h2 className="display-2">REGISTER</h2>
                     <form>
@@ -24,15 +25,15 @@ const Register = () => {
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                         />
-                        <label htmlFor="Password">Парола</label>
+                        <label htmlFor="Password">Password</label>
                         <input
-                            naem="password"
+                            name="password"
                             type="password"
                             required
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
-                        <label htmlFor="Password">Повторете парола</label>
+                        <label htmlFor="Password">Repeat Password</label>
                         <input
                             name='rePassword'
                             type="password"
@@ -44,14 +45,8 @@ const Register = () => {
                             type="submit"
                             id="login-submit-button"
                         />
-
                     </form>
                 </div>
-                <div className="stars">
-
-                    <div className="central-body">
-
-                    </div>
                     <div className="objects">
                         <img className="object_rocket" src="http://salehriaz.com/404Page/img/rocket.svg" width="40px" />
                         <div className="earth-moon">
@@ -74,6 +69,7 @@ const Register = () => {
                 </div>
 
             </div>
+
         </div>
     );
 }

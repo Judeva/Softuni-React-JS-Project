@@ -67,70 +67,51 @@ const Create = () => {
             created: String(imageAsFile.lastModifiedDate)
         }
 
-
-
         axios.post('/create', newNomination)
             .then(res => { console.log(res) })
             .catch(err => { console.log(err) })
-
-        // console.log(newNomination);
-        // fetch('http://localhost:5000/create', {
-        //     method: 'POST',
-        //     header: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(newNomination)
-
-
-        // }).then(res => {
-        //     console.log(res);
-        // }).catch(err => {
-        //     console.log(err)
-        // })
     }
 
     return (
 
         <div className="bg-purple">
-            <div className='create'>
-                <h4 className="display-6">ДОБАВИ ПРЕДЛОЖЕНИЕ</h4>
-                <img className='preview-image'
-                    src={imageAsUrl.imgUrl}
-                    alt="Preview here" />
-                <input
-                    type="file"
-                    onChange={handleImageAsFile}
-                />
-                <div>
-                    <button
-                        onClick={handleFireBaseUpload}
-                        className="btn">ПРИКАЧИ СНИМКА</button>
-                </div>
-                <form onSubmit={handleCreateNomination} >
-                    <input
-                        onChange={handleOnChange}
-                        type="text"
-                        name="title"
-                        placeholder="Заглавие..."
-                        value={input.title}
-                    />
-                    <textarea
-                        onChange={handleOnChange}
-                        type="text"
-                        name="description"
-                        placeholder="Описание..."
-                        value={input.description}
-                    >
-                    </textarea>
-                    <div>
-                        <button className="btn">ДОБАВИ ПРЕДЛОЖЕНИЕ</button>
-                    </div>
-                </form>
-            </div>
-            <div className="stars">
-
+            <div className="stars">           
                 <div className="central-body">
-
+                <div className='create'>
+                    <h4 className="display-6">ADD PICTURE</h4>
+                    <img className='preview-image'
+                        src={imageAsUrl.imgUrl}
+                        alt="Preview here" />
+                    <input
+                        type="file"
+                        onChange={handleImageAsFile}
+                    />
+                    <div>
+                        <button
+                            onClick={handleFireBaseUpload}
+                            className="btn-go-home">UPLOAD PICTURE</button>
+                    </div>
+                    <form onSubmit={handleCreateNomination} >
+                        <input
+                            onChange={handleOnChange}
+                            type="text"
+                            name="title"
+                            placeholder="Заглавие..."
+                            value={input.title}
+                        />
+                        <textarea
+                            onChange={handleOnChange}
+                            type="text"
+                            name="description"
+                            placeholder="Описание..."
+                            value={input.description}
+                        >
+                        </textarea>
+                        <div>
+                            <button className="btn-go-home">ADD SUBMITION</button>
+                        </div>
+                    </form>
+                </div>
                 </div>
                 <div className="objects">
                     <img className="object_rocket" src="http://salehriaz.com/404Page/img/rocket.svg" width="40px" />
@@ -148,13 +129,9 @@ const Create = () => {
                     <div className="star"></div>
                     <div className="star"></div>
                     <div className="star"></div>
-
                 </div>
-
             </div>
-
         </div>
-
     );
 }
 

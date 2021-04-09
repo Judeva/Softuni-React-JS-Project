@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {auth} from '../../firebase/firebase'
 import './Login.css';
 
 const Login = () => {
@@ -6,42 +7,52 @@ const Login = () => {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
 
-    console.log(process.env.NODE_ENV);
-    console.log(process.env.PORT);
+    const onLoginSubmitHandler =(e)=>{
+
+        e.preventDefault();
+        const username= e.target.username.value;
+        const password= e.target.password.value;
+        
+        auth.signInWithEmailAndPassword(username, password)
+        .then(userCredentials=>{
+            console.log(userCredentials);
+        }).catch(err=>{
+            console.log(err);
+        })
+    }
 
     return (
-
-        <div className='home'>
-            <div className="bg-purple">
-                <div className='login2'>
-                    <h2 className="display-2">LOGIN</h2>
-                    <form>
-                        <label
-                            htmlFor="Username"
-                        >Email</label>
-                        <input
-                            type='email'
-                            required
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
-                        />
-                        <label htmlFor="Password">Парола</label>
-                        <input
-                            type="password"
-                            required
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                        <input
-                            type="submit"
-                            id="login-submit-button"
-                        />
-
-                    </form>
-                </div>
-            </div>
+        <div className="bg-purple">
             <div className="stars">
                 <div className="central-body">
+                    <div className='login2'>
+                        <h2 className="display-2">LOGIN</h2>
+                        <form onSubmit={onLoginSubmitHandler}>
+                            <label
+                                htmlFor="Username"
+                            >Email</label>
+                            <input
+                                name="username"
+                                type='email'
+                                placeholder="user@example.com"
+                                required
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                            />
+                            <label htmlFor="Password">Password</label>
+                            <input
+                                name="password"
+                                type="password"
+                                required
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                            <input
+                                type="submit"
+                                id="login-submit-button"
+                            />
+                        </form>
+                    </div>
                     <div className="objects">
                         <img className="object_rocket" src="http://salehriaz.com/404Page/img/rocket.svg" width="40px" />
                         <div className="earth-moon">
@@ -59,12 +70,9 @@ const Login = () => {
                         <div className="star"></div>
                         <div className="star"></div>
                     </div>
-
                 </div>
-
             </div>
         </div>
-
     );
 }
 

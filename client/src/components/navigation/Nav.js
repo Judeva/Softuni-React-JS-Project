@@ -7,12 +7,12 @@ class Nav extends Component {
     render() {
         return (
             <div className="nav">
-                <NavLink to="/" className="nav-link">НАЧАЛО</NavLink>
-                <NavLink to="/about" className="nav-link">ОТНОСНО</NavLink>
-                <NavLink to="/register" className="nav-link">РЕГИСТРАЦИЯ</NavLink>
-                <NavLink to="/login" className="nav-link">ВХОД</NavLink>
-                <NavLink to="/profile" className="nav-link">ПРОФИЛ</NavLink>
-                <NavLink to="/logout" className="nav-link">ИЗХОД</NavLink>
+                <NavLink to="/" className="nav-link">HOME</NavLink>
+                <NavLink to="/about" className="nav-link">ABOUT</NavLink>
+                <NavLink to="/register" className="nav-link">REGISTER</NavLink>
+                <NavLink to="/login" className="nav-link">LOGIN</NavLink>
+                <NavLink to="/profile" className="nav-link">PROFILE</NavLink>
+                <NavLink to="/logout" className="nav-link">LOGOUT</NavLink>
             </div>
         )
     }
