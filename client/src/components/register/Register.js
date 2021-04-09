@@ -1,10 +1,30 @@
 import { useState } from "react";
+import {auth} from '../../firebase/firebase'
 import './Register.css';
 
-const Register = () => {
+const Register = ({
+    history
+}) => {
 
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
+    const [rePassword, setRePassword] = useState();
+
+    const onRegisterSubmitHandler =(e)=>{
+
+        e.preventDefault();
+
+        if(password!==rePassword){
+            return alert('Passwords should match');
+        }
+                
+        auth.createUserWithEmailAndPassword(username, password)
+        .then(userCredentials=>{
+            history.push('/');
+        }).catch(err=>{
+            console.log(err);
+        })
+    }
 
     return (
 
@@ -14,12 +34,12 @@ const Register = () => {
                 <div className="central-body">
                 <div className='register'>
                     <h2 className="display-2">REGISTER</h2>
-                    <form>
+                    <form onSubmit={onRegisterSubmitHandler}>
                         <label
                             htmlFor="Username"
                         >E-mail</label>
                         <input
-                            name="email"
+                            name="username"
                             type='email'
                             required
                             value={username}
@@ -38,8 +58,8 @@ const Register = () => {
                             name='rePassword'
                             type="password"
                             required
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
+                            value={rePassword}
+                            onChange={(e) => setRePassword(e.target.value)}
                         />
                         <input
                             type="submit"
