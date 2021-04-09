@@ -1,18 +1,17 @@
 import { useState } from "react";
 import { storage } from '../../firebase/firebase';
 import axios from 'axios';
-import "./Create.css";
+import './Create.css';
+import ErrorBox from "../error/ErrorBox";
 
 
 const Create = ({
     history
 }) => {
 
-
     const allInputs = { imgUrl: '' };
     const [imageAsFile, setImageAsFile] = useState('');
     const [imageAsUrl, setImageAsUrl] = useState(allInputs);
-
     const [error, setError] = useState(null);
     const [input, setInput] = useState({
         title: '',
@@ -89,6 +88,7 @@ const Create = ({
 
     return (
         <div className='create'>
+            <ErrorBox >{error}</ErrorBox>
             <h4 className="display-6">ADD PICTURE</h4>
             <img className='preview-image'
                 src={imageAsUrl.imgUrl}
@@ -122,6 +122,7 @@ const Create = ({
                     <button className="btn-go-home">ADD SUBMITION</button>
                 </div>
             </form>
+            
         </div>
     );
 }
