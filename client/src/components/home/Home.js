@@ -1,14 +1,16 @@
 import { Component } from 'react'
 import axios from 'axios';
-import Nomination from '../nomination/Nomination'
 import './Home.css'
+import Modal from '../modal/Modal';
 
 class Home extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            images: []
+            images: [],
+            selectedImage: null,
+            currentImage: {}
         }
     }
 
@@ -31,16 +33,20 @@ class Home extends Component {
 
     render() {
         return (
-            <div className="home-container">
-
+            <div className="img-grid">
                 {this.state.images.map(doc => (
-                    <Nomination key={doc._id} doc={doc}/>
+                    <div className='img-wrap' key={doc._id}
+                        onClick={() => this.setState({ selectedImage: doc.imageUrl, currentImage: { ...doc } })}
+                    >
+                        <img src={doc.imageUrl} alt='uploaded image' />
+
+                    </div>
                 ))}
-
+                {this.state.selectedImage && <Modal 
+                selectedImage={this.state.selectedImage} 
+                setSelectedImage={()=>this.setState({selectedImage:null})} />}
             </div>
-
         )
     }
 }
-
 export default Home;

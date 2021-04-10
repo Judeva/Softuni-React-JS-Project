@@ -14,11 +14,12 @@ import Nomination from './components/nomination/Nomination';
 import Create from './components/create/Create';
 import Profile from './components/profile/Profile';
 import Error404 from './components/404/Error404';
+import Modal from './components/modal/Modal';
 
 function App() {
 
   const [user, setUser] = useState(null);
-
+  
   useEffect(() => {
     auth.onAuthStateChanged(setUser)
   }, []);
