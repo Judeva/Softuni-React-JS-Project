@@ -1,6 +1,5 @@
 import { Component } from 'react'
 import axios from 'axios';
-import { Link } from 'react-router-dom'
 import Nomination from '../nomination/Nomination'
 import './Home.css'
 
@@ -9,23 +8,35 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            nominations: []
+            images: []
         }
     }
 
     componentDidMount() {
+
+        let collection = [];
         axios.get('/nominations')
             .then(res => {
-                this.setState({ nominations: res })
-                console.log(res.data);   
-            })               
+                res.data.forEach(element => {
+                    collection.push(element);
+                });
+                return collection;
+            })
+            .then(collection => {
+                console.log(collection)
+                this.setState({ images: collection })
+            })
             .catch(err => { console.log(err) });
     }
 
     render() {
         return (
             <div className="home-container">
-                <Nomination/>
+
+                {this.state.images.map(doc => (
+                    <Nomination key={doc._id} doc={doc}/>
+                ))}
+
             </div>
 
         )

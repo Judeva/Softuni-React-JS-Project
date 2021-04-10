@@ -1,24 +1,22 @@
-import { Component } from 'react'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Nomination.css'
 
-class Nomination extends Component {
+const Nomination = ({
+    doc
+}) => {
 
-    constructor(props) {
-        super(props);
-      }
-
-    render() {
-        return (
-            <div className="card" style={{width: '18rem'}}>
-                <img src="https://web.static.btv.bg/np_2021.jpg" className="card-img-top" alt="parliament"></img>
-                <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="/details/:id" className="btn btn-primary">Go somewhere</a>
-                </div>
+    console.log(doc);
+    return (
+        <div className="card">
+            <img src={doc.imageUrl} className="card-img-top" alt="photo"></img>
+            <div className="card-body">
+                <h5 className="card-title">{doc.title}</h5>
+                <p className="card-text">{doc.description}</p>
             </div>
-        )
-    }
+            <Link to="/" className="btn btn-primary">Don't press</Link>
+        </div>
+    )
 
 }
 

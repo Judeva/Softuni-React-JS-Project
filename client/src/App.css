@@ -1,9 +1,8 @@
 .App {
   text-align: center;
   background: url(http://salehriaz.com/404Page/img/bg_purple.png);
-  min-height: 100%;
-  min-width: 100%;
   margin:0;
+  width: 99%;
 }
 
 @keyframes App-logo-spin {
@@ -148,8 +147,8 @@ li a:hover {
 }
 
 .central-body{
-    height: 800px;
-    width: 100%;
+    height: auto;
+    width: auto;
     padding: 3% 5% 10% 5%;
     text-align: center;
 }
@@ -261,3 +260,4 @@ li a:hover {
         padding-top: 15%;
     }
 }
+

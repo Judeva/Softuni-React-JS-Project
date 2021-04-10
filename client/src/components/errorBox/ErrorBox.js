@@ -6,9 +6,9 @@ const ErrorBox = ({
 }) => {
 
     return (
-        <div class="alert">
-            <span className="closebtn" onclick='this.parentElement.remove()'>&times;</span>
-                {error}
+        <div className="alert">
+            <span className="closebtn" >&times;</span>
+                This is error message
         </div>
     );
 }

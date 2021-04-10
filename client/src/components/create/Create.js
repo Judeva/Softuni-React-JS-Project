@@ -2,8 +2,7 @@ import { useState } from "react";
 import { storage } from '../../firebase/firebase';
 import axios from 'axios';
 import './Create.css';
-import ErrorBox from "../error/ErrorBox";
-
+import ErrorBox from "../errorBox/ErrorBox";
 
 const Create = ({
     history
@@ -18,15 +17,15 @@ const Create = ({
         description: '',
     });
 
-    const types =['image/png', 'image/jpeg'];
+    const types = ['image/png', 'image/jpeg'];
 
     const handleImageAsFile = e => {
         const image = e.target.files[0];
 
-        if (image&&types.includes(image.type)) {
+        if (image && types.includes(image.type)) {
             setImageAsFile(image)
             console.log(image);
-        }else{
+        } else {
             setImageAsFile(null);
             setError('Please select an image file (png or jpeg!)')
         }
@@ -41,7 +40,7 @@ const Create = ({
             console.error(`not an image, the image file is a ${typeof (imageAsFile)}`);
         }
 
-        const uploadTask = storage.ref(`/images/${imageAsFile.name}`).put(imageAsFile)
+        const uploadTask = storage.ref(`/images/${imageAsFile.name}`).put(imageAsFile);
 
         uploadTask.on("state_changed", console.log, console.error, () => {
             storage
@@ -51,6 +50,8 @@ const Create = ({
                 .then((fireBaseUrl) => {
                     // setImageAsFile(null);
                     setImageAsUrl(prevObject => ({ ...prevObject, imgUrl: fireBaseUrl }));
+                }).catch(err => {
+                    console.log(err);
                 })
         })
     }
@@ -88,11 +89,12 @@ const Create = ({
 
     return (
         <div className='create'>
-            <ErrorBox >{error}</ErrorBox>
+            {error && <ErrorBox >{error}</ErrorBox>}
             <h4 className="display-6">ADD PICTURE</h4>
             <img className='preview-image'
                 src={imageAsUrl.imgUrl}
-                alt="Preview here" />
+                alt=''
+            />
             <input
                 type="file"
                 onChange={handleImageAsFile}
@@ -107,14 +109,14 @@ const Create = ({
                     onChange={handleOnChange}
                     type="text"
                     name="title"
-                    placeholder="Заглавие..."
+                    placeholder="Title"
                     value={input.title}
                 />
                 <textarea
                     onChange={handleOnChange}
                     type="text"
                     name="description"
-                    placeholder="Описание..."
+                    placeholder="  Description..."
                     value={input.description}
                 >
                 </textarea>
@@ -122,7 +124,7 @@ const Create = ({
                     <button className="btn-go-home">ADD SUBMITION</button>
                 </div>
             </form>
-            
+
         </div>
     );
 }
