@@ -6,12 +6,11 @@ class Header extends Component {
 
     render() {
         return (
-         <header className="app-header">
-            <Nav/>
-         </header>
+            <header className="app-header">
+                <Nav />
+            </header>
         )
     }
-
 }
 
 export default Header;

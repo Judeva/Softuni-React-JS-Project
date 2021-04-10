@@ -33,19 +33,22 @@ class Home extends Component {
 
     render() {
         return (
-            <div className="img-grid">
-                {this.state.images.map(doc => (
-                    <div className='img-wrap' key={doc._id}
-                        onClick={() => this.setState({ selectedImage: doc.imageUrl, currentImage: { ...doc } })}
-                    ><h5>{doc.title}</h5>
-                        <img src={doc.imageUrl} alt='uploaded image' />                           
-                    </div>
-                    
-                ))}
-                {this.state.selectedImage && <Modal 
-                selectedImage={this.state.selectedImage} 
-                setSelectedImage={()=>this.setState({selectedImage:null})} />} 
-                
+            <div>
+                <h4 className="display-2">SPACE CAT PHOTOS</h4>
+                <div className="img-grid">
+                    {this.state.images.map(doc => (
+                        <div className='img-wrap' key={doc._id}
+                            onClick={() => this.setState({ selectedImage: doc.imageUrl, currentImage: { ...doc } })}
+                        ><h5>{doc.title}</h5>
+                            <img src={doc.imageUrl} alt='uploaded image' />
+                        </div>
+
+                    ))}
+                    {this.state.selectedImage && <Modal
+                        selectedImage={this.state.selectedImage}
+                        setSelectedImage={() => this.setState({ selectedImage: null })} />}
+
+                </div>
             </div>
         )
     }

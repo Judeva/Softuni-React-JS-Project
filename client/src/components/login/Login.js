@@ -8,6 +8,7 @@ const Login = ({
 
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
+    
 
     const onLoginSubmitHandler = (e) => {
 
@@ -15,10 +16,11 @@ const Login = ({
 
         auth.signInWithEmailAndPassword(username, password)
             .then(userCredentials => {
+                console.log(userCredentials);
                 history.push('/')
             }).catch(err => {
                 console.log(err);
-            })
+            });
     }
 
     return (

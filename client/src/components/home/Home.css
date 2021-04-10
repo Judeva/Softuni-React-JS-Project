@@ -1,5 +1,5 @@
 .img-grid{
-    padding: 5%;
+    padding: 10%;
     margin: 20px auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -27,7 +27,7 @@
 .img-wrap h5{
     color:white;
     position: absolute;
-    top: 95%;
+    top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index:1;
@@ -72,3 +72,8 @@
   .overlay :hover {
     opacity: 1;
   }
+
+ h4{
+    color: ivory;
+    
+}
