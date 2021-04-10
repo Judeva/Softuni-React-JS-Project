@@ -7,9 +7,9 @@ const nominationSchema = new mongoose.Schema({
     },
     description: {
         type: String,
-       
+
     },
-    
+
     imageUrl:
     {
         type: String,
@@ -23,11 +23,10 @@ const nominationSchema = new mongoose.Schema({
         // required: true
     },
 
-    // creator: {
-    //     type: mongoose.Types.ObjectId,
-    //     ref: 'User'
-    // }
-
+    creator: {
+        type: String,
+        require: true,
+    }
 });
 
 

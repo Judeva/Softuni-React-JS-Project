@@ -37,14 +37,15 @@ class Home extends Component {
                 {this.state.images.map(doc => (
                     <div className='img-wrap' key={doc._id}
                         onClick={() => this.setState({ selectedImage: doc.imageUrl, currentImage: { ...doc } })}
-                    >
-                        <img src={doc.imageUrl} alt='uploaded image' />
-
+                    ><h5>{doc.title}</h5>
+                        <img src={doc.imageUrl} alt='uploaded image' />                           
                     </div>
+                    
                 ))}
                 {this.state.selectedImage && <Modal 
                 selectedImage={this.state.selectedImage} 
-                setSelectedImage={()=>this.setState({selectedImage:null})} />}
+                setSelectedImage={()=>this.setState({selectedImage:null})} />} 
+                
             </div>
         )
     }

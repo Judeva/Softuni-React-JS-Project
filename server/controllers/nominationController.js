@@ -8,13 +8,14 @@ const nominationService = require('../services/nominationService');
 router.post('/', (req, res) => {
     
     
-    const { title, description, imageUrl, created } = req.body;
+    const { title, description, imageUrl, created, creator } = req.body;
 
     let nomination = {
         title,
         description,
         imageUrl,
-        created
+        created,
+        creator
     }
 
 

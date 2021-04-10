@@ -5,18 +5,20 @@ const Modal = ({
     setSelectedImage
 }) => {
 
-    
-const handleClick=(e)=>{
-  
-}
+
+    const handleClick = (e) => {
+        if (e.target.classList.contains('backdrop')) {
+            setSelectedImage();
+        }
+    }
 
     return (
-        <div>
-        <div className='backdrop' onClick={setSelectedImage}>
+
+        <div className='backdrop' onClick={handleClick}>
             <img src={selectedImage} alt='enlarged image' />
         </div>
-      
-        </div>
+
+
     );
 }
 
