@@ -1,8 +1,16 @@
-.card{
-width: 18rem;
-height: 25rem;
+.img-wrap{
+    overflow:hidden;
+    height: 0;
+    padding:50% 0;
+    position: relative;
+    opacity:0.6;
 }
 
-.card-body{
-    height: 8rem;
+.img-wrap img{
+    min-width:150%;
+    min-height:100%;
+    max-width:150%;
+    position: absolute;
+    top:0;
+    left:0;
 }
