@@ -3,12 +3,12 @@ import './Profile.css';
 import { useContext, useState, useEffect } from 'react';
 import AuthContext from '../../contexts/AuthContext';
 import axios from 'axios'
+import ProfileCard from './profileCrad/ProfileCard';
 
-const Profile = ({ }) => {
+const Profile = ({}) => {
 
     const user = useContext(AuthContext);
     const [nominations, setNominations] = useState(null);
-    console.log(user); //TODO filter the collection by creator
 
     useEffect(() => {
         let collection = [];
@@ -31,7 +31,9 @@ const Profile = ({ }) => {
     return (
         <div className='profile'>
             <h4 className="display-2">My Profile</h4>
+            
             <h4 className="display-6">USER INFO</h4>
+           <ProfileCard/>
             <h4 className="display-6">MY FILES</h4>
 
             <div className="img-grid">
