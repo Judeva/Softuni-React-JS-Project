@@ -24,7 +24,7 @@ Space cat is a platfrom where users can upload and store photos and browse, rate
 - Run the server
 - npm start
 
-- The server will run on http://localhost:5000
+####### The server will run on http://localhost:5000
 
 # 
 
@@ -37,4 +37,4 @@ Space cat is a platfrom where users can upload and store photos and browse, rate
 - And run the application
 - npm start
 
-- The app will run on http://localhost:3000
+####### The app will run on http://localhost:3000
