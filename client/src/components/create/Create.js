@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { storage } from '../../firebase/firebase';
 import axios from 'axios';
 import './Create.css';
 import ErrorBox from "../errorBox/ErrorBox";
+import AuthContext from '../../contexts/AuthContext';
 
 const Create = ({
     history
 }) => {
 
+
+    const user = useContext(AuthContext);
     const allInputs = { imgUrl: '' };
     const [imageAsFile, setImageAsFile] = useState('');
     const [imageAsUrl, setImageAsUrl] = useState(allInputs);
@@ -33,12 +36,7 @@ const Create = ({
     }
 
     const handleFireBaseUpload = e => {
-        e.preventDefault()
-        console.log('start of upload')
-
-        if (imageAsFile === '') {
-            console.error(`not an image, the image file is a ${typeof (imageAsFile)}`);
-        }
+        e.preventDefault();
 
         const uploadTask = storage.ref(`/images/${imageAsFile.name}`).put(imageAsFile);
 
@@ -76,12 +74,13 @@ const Create = ({
             title: input.title,
             description: input.description,
             imageUrl: imageAsUrl.imgUrl,
-            created: String(imageAsFile.lastModifiedDate)
+            created: Date(imageAsFile.lastModifiedDate),
+            creator: user.user
         }
 
         axios.post('/create', newNomination)
             .then(res => {
-                history.push('/'); //TODO redirect to profile page;
+                history.push('/'); 
                 console.log(res)
             })
             .catch(err => { console.log(err) })
