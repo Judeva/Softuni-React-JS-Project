@@ -10,7 +10,7 @@ class SimpleMap extends Component {
             // Important! Always set the container height explicitly
             <div style={{ height: '50vh', width: '100%' }}>
                 <GoogleMapReact
-
+                    // bootstrapURLKeys={{key: }}
                     defaultCenter={{ lat: 42.698334, lng: 23.319941 }} //Sofia
                     defaultZoom={11}
                 >

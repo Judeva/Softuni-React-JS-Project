@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { auth } from '../../firebase/firebase'
+import ErrorBox from "../errorBox/ErrorBox";
 import './Register.css';
 
 const Register = ({
@@ -9,6 +10,7 @@ const Register = ({
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
     const [rePassword, setRePassword] = useState();
+    const [error, setError] = useState(null);
 
     const onRegisterSubmitHandler = (e) => {
 
@@ -21,13 +23,15 @@ const Register = ({
         auth.createUserWithEmailAndPassword(username, password)
             .then(userCredentials => {
                 history.push('/');
-            }).catch(err => {
-                console.log(err);
+            }).catch(error => {
+                setError(error)
+                console.log(error);
             })
     }
 
     return (
         <div className='register'>
+            {error && <ErrorBox >{error}</ErrorBox>}
             <h2 className="display-2">REGISTER</h2>
             <form onSubmit={onRegisterSubmitHandler}>
                 <label

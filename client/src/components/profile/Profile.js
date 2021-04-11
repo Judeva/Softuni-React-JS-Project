@@ -9,6 +9,8 @@ const Profile = ({}) => {
 
     const user = useContext(AuthContext);
     const [nominations, setNominations] = useState(null);
+    
+    console.log();
 
     useEffect(() => {
         let collection = [];
@@ -33,7 +35,7 @@ const Profile = ({}) => {
             <h4 className="display-2">My Profile</h4>
             
             <h4 className="display-6">USER INFO</h4>
-           <ProfileCard/>
+           <ProfileCard uploads={nominations?.length}/>
             <h4 className="display-6">MY FILES</h4>
 
             <div className="img-grid">

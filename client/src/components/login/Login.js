@@ -19,7 +19,7 @@ const Login = ({
                 console.log(userCredentials);
                 history.push('/')
             }).catch(err => {
-                console.log(err);
+                console.log(err.message);
             });
     }
 

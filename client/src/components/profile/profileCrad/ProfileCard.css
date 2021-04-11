@@ -28,4 +28,9 @@
       size: 100px;
       padding: 35px;
   }
+
+  .card h4{
+    color: black;
+    padding: 5%
+  }
   

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import './ErrorBox.css';
 
 const ErrorBox = ({
@@ -8,7 +7,7 @@ const ErrorBox = ({
     return (
         <div className="alert">
             <span className="closebtn" >&times;</span>
-                This is error message
+               {error.message}
         </div>
     );
 }
