@@ -16,7 +16,7 @@ const Modal = ({
         <div className='backdrop' onClick={handleClick}>
             <img src={selectedImage} alt='enlarged image' />
             <p>Description: {imageData.description} &copy; Creator: {imageData.creator}</p>
-            <p>Uploaded at: {imageData.created} Likes: {imageData.likes}</p>
+            <p>Uploaded at: {imageData.created}</p>
             <p>Likes: {imageData.likes}</p>
         </div>
 
