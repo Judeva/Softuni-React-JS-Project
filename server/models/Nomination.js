@@ -16,10 +16,13 @@ const nominationSchema = new mongoose.Schema({
         require: true,
     },
 
-    // likes: Number,
+    likes: {
+        type: Number,
+        default:0
+    },
 
     created: {
-        type: String,
+        type: Date,
         // required: true
     },
 

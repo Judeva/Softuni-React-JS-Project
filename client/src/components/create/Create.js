@@ -75,7 +75,8 @@ const Create = ({
             description: input.description,
             imageUrl: imageAsUrl.imgUrl,
             created: Date(imageAsFile.lastModifiedDate),
-            creator: user.user
+            creator: user.user,
+            likes:0
         }
 
         axios.post('/create', newNomination)

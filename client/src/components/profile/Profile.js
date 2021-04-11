@@ -15,7 +15,9 @@ const Profile = ({ }) => {
         axios.get('/nominations')
             .then(res => {
                 res.data.forEach(element => {
-                    collection.push(element);
+                    if (element.creator ==user.user) {
+                        collection.push(element);
+                    }
                 });
                 return collection;
             })

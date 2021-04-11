@@ -31,7 +31,7 @@ const App = () => {
 
   const authInfo = {
     isAuthenticated: Boolean(loggedUser),
-    user: loggedUser.email
+    user: loggedUser?.email
   };
 
 
