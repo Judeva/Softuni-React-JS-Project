@@ -9,7 +9,6 @@ const Create = ({
     history
 }) => {
 
-
     const user = useContext(AuthContext);
     const allInputs = { imgUrl: '' };
     const [imageAsFile, setImageAsFile] = useState('');
