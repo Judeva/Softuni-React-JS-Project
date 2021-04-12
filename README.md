@@ -1,7 +1,7 @@
 # Softuni-React-JS-Project
 
 ## SPACE CAT
-Space cat is a platfrom where users can upload and store photos and browse, rate photos from other users.
+Space cat is a platform where users can upload and store photos and browse, rate photos from other users.
 
 ## Technical Stack
 
