@@ -15,7 +15,6 @@ import Create from './components/create/Create';
 import Profile from './components/profile/Profile';
 import Error404 from './components/404/Error404';
 import AuthContext from './contexts/AuthContext';
-import {ToastContainer, toast, Zoom, Bounce} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
 
 const App = () => {

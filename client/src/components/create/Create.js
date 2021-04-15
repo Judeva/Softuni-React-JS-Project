@@ -6,6 +6,7 @@ import AuthContext from '../../contexts/AuthContext';
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
 import { validateInput } from '../../services/nominationsService';
+import moment from 'moment';
 
 const Create = ({
     history
@@ -73,12 +74,13 @@ const Create = ({
     const handleCreateNomination = e => {
         e.preventDefault()
 
-
+        const creationDate = moment(Date(imageAsFile?.lastModifiedDate)).format('lll');
+       
         const newNomination = {
             title: input.title,
             description: input.description,
             imageUrl: imageAsUrl.imgUrl,
-            created: Date(imageAsFile?.lastModifiedDate),
+            created: creationDate,
             creator: user.user,
             likes: 0
         }

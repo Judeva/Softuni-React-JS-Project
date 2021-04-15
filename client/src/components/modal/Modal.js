@@ -13,16 +13,23 @@ const Modal = ({
         }
     }
 
+    const handleLikeButtonClick =()=>{
+        
+    }
+
     return (
         <div className='backdrop' onClick={handleClick}>
             <img src={selectedImage} alt='enlarged image' />
-            <div className='container-modal'>
+            
             <p>Description: {imageData.description} &copy; Creator: {imageData.creator}</p>
-            <p>Uploaded at: {imageData.created}</p>
-            <p>Likes: {imageData.likes}</p>
+            <p>Uploaded at : {imageData.created}    Likes: {imageData.likes}</p>
+            <p><button 
+            type="button" 
+            className="btn-like"
+            onClick={handleLikeButtonClick}>Like</button>  </p>
            
-            </div>
-             <button type="button" className="btn-like">Like</button>
+            
+             
         </div>
 
     );
