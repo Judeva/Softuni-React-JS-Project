@@ -3,17 +3,18 @@ const mongoose = require('mongoose');
 const nominationSchema = new mongoose.Schema({
     title: {
         type: String,
-        require: true,
+        required: true,
     },
     description: {
         type: String,
+        required:true,
 
     },
 
     imageUrl:
     {
         type: String,
-        require: true,
+        required: true,
     },
 
     likes: {
@@ -23,12 +24,12 @@ const nominationSchema = new mongoose.Schema({
 
     created: {
         type: Date,
-        // required: true
+        required: true
     },
 
     creator: {
         type: String,
-        require: true,
+        required: true,
     }
 });
 

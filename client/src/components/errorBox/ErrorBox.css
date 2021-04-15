@@ -1,12 +1,14 @@
-.alert {
-    padding: 20px;
+.error-box {
+    padding: 25px;
     background-color: #f44336; /* Red */
     color: white;
     margin-bottom: 100px;
     margin-right: 100px;
-    position: fixed;
-    bottom: 0;
-    right: 0;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    border-radius: 7px;
+    width:auto;
 }
   
   .closebtn {

@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import './App.css';
 import { auth } from './firebase/firebase';
-import axios from 'axios';
 //import * as nominationsService from './services/nominationsService';
 
 import Footer from './components/footer/Footer';
@@ -16,8 +15,8 @@ import Create from './components/create/Create';
 import Profile from './components/profile/Profile';
 import Error404 from './components/404/Error404';
 import AuthContext from './contexts/AuthContext';
-import CollectionContext from './contexts/CollectionContext';
-
+import {ToastContainer, toast, Zoom, Bounce} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
 
 const App = () => {
 

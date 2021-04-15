@@ -2,8 +2,10 @@ import { useState, useContext } from "react";
 import { storage } from '../../firebase/firebase';
 import axios from 'axios';
 import './Create.css';
-import ErrorBox from "../errorBox/ErrorBox";
 import AuthContext from '../../contexts/AuthContext';
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
+import { validateInput } from '../../services/nominationsService';
 
 const Create = ({
     history
@@ -13,7 +15,6 @@ const Create = ({
     const allInputs = { imgUrl: '' };
     const [imageAsFile, setImageAsFile] = useState('');
     const [imageAsUrl, setImageAsUrl] = useState(allInputs);
-    const [error, setError] = useState(null);
     const [input, setInput] = useState({
         title: '',
         description: '',
@@ -22,14 +23,16 @@ const Create = ({
     const types = ['image/png', 'image/jpeg'];
 
     const handleImageAsFile = e => {
+
         const image = e.target.files[0];
+        console.log(image);
 
         if (image && types.includes(image.type)) {
             setImageAsFile(image)
-            console.log(image);
+            console.log(image.name);
         } else {
             setImageAsFile(null);
-            setError('Please select an image file (png or jpeg!)')
+            toast.error('Selected file is not an image!');
         }
 
     }
@@ -37,20 +40,23 @@ const Create = ({
     const handleFireBaseUpload = e => {
         e.preventDefault();
 
-        const uploadTask = storage.ref(`/images/${imageAsFile.name}`).put(imageAsFile);
-
-        uploadTask.on("state_changed", console.log, console.error, () => {
-            storage
-                .ref('images')
-                .child(imageAsFile.name)
-                .getDownloadURL()
-                .then((fireBaseUrl) => {
-                    // setImageAsFile(null);
-                    setImageAsUrl(prevObject => ({ ...prevObject, imgUrl: fireBaseUrl }));
-                }).catch(err => {
-                    console.log(err);
-                })
-        })
+        if (imageAsFile&&imageAsFile) {
+            const uploadTask = storage.ref(`/images/${imageAsFile.name}`).put(imageAsFile);
+            uploadTask.on("state_changed", console.log, console.error, () => {
+                storage
+                    .ref('images')
+                    .child(imageAsFile.name)
+                    .getDownloadURL()
+                    .then((fireBaseUrl) => {
+                        // setImageAsFile(null);
+                        setImageAsUrl(prevObject => ({ ...prevObject, imgUrl: fireBaseUrl }));
+                    }).catch(err => {
+                        console.log(err);
+                    })
+            })
+        } else {
+            toast.error('You should upload photo first!')
+        }
     }
 
     const handleOnChange = e => {
@@ -67,29 +73,33 @@ const Create = ({
     const handleCreateNomination = e => {
         e.preventDefault()
 
-        console.log('hello from handleCreate')
 
         const newNomination = {
             title: input.title,
             description: input.description,
             imageUrl: imageAsUrl.imgUrl,
-            created: Date(imageAsFile.lastModifiedDate),
+            created: Date(imageAsFile?.lastModifiedDate),
             creator: user.user,
-            likes:0
+            likes: 0
         }
+
+
+        validateInput(newNomination);
 
         axios.post('/create', newNomination)
             .then(res => {
-                history.push('/'); 
-                console.log(res)
+                history.push('/');
+
             })
-            .catch(err => { console.log(err) })
+            .catch(err => {
+                toast.error(err.message);
+            })
     }
 
     return (
         <div className='create'>
-            {error && <ErrorBox >{error}</ErrorBox>}
             <h4 className="display-6">ADD PICTURE</h4>
+            <ToastContainer />
             <img className='preview-image'
                 src={imageAsUrl.imgUrl}
                 alt=''

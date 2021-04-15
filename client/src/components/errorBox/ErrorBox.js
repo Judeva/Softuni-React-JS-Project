@@ -5,9 +5,9 @@ const ErrorBox = ({
 }) => {
 
     return (
-        <div className="alert">
+        <div className="error-box">
             <span className="closebtn" >&times;</span>
-               {error.message}
+               {error}
         </div>
     );
 }

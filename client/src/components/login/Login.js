@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { auth } from '../../firebase/firebase'
 import './Login.css';
+import {ToastContainer, toast} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
 
 const Login = ({
     history
 }) => {
 
-    const [username, setUsername] = useState();
-    const [password, setPassword] = useState();
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
     
 
     const onLoginSubmitHandler = (e) => {
@@ -19,13 +21,18 @@ const Login = ({
                 console.log(userCredentials);
                 history.push('/')
             }).catch(err => {
-                console.log(err.message);
+                if(err){
+                    console.log(err.message)
+                    toast.error(err.message)
+                }
+                console.log(err);
             });
     }
 
     return (
         <div className='login2'>
             <h2 className="display-2">LOGIN</h2>
+            <ToastContainer/>
             <form onSubmit={onLoginSubmitHandler}>
                 <label
                     htmlFor="Username"
