@@ -17,10 +17,7 @@ const nominationSchema = new mongoose.Schema({
         required: true,
     },
 
-    likes: {
-        type: Number,
-        default:0
-    },
+    likes: [],
 
     created: {
         type: Date,

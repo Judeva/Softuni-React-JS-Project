@@ -82,7 +82,7 @@ const Create = ({
             imageUrl: imageAsUrl.imgUrl,
             created: creationDate,
             creator: user.user,
-            likes: 0
+            likes: []
         }
 
 
@@ -91,7 +91,6 @@ const Create = ({
         axios.post('/create', newNomination)
             .then(res => {
                 history.push('/');
-
             })
             .catch(err => {
                 toast.error(err.message);

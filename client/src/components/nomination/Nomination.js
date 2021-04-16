@@ -1,16 +1,29 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import './Nomination.css'
+import { Link } from 'react-router-dom'
 
 const Nomination = ({
-    doc
+    imageUrl,
+    title,
+    description,
+    creator,
+    created,
+    likes,
+    _id
 }) => {
 
+
     return (
-        <div className="img-wrap">
-            <img src={doc.imageUrl} alt="photo"></img>
-            <Link to="/" className="btn btn-primary">Don't press</Link>
-        </div>
+
+        <li className='nomination-li'>
+            <p>{title}</p>
+            <img className='nomination-img'
+                src={imageUrl}
+                alt="photo"
+            ></img>
+            <Link to={`/nominations/${_id}}`}><button className="button">Details</button></Link>
+        </li>
+
     );
 
 }

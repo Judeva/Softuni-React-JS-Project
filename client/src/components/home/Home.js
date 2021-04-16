@@ -1,7 +1,9 @@
 import { Component } from 'react'
 import axios from 'axios';
 import './Home.css'
-import Modal from '../modal/Modal';
+import Nomination from '../nomination/Nomination';
+import { Link } from 'react-router-dom';
+
 
 class Home extends Component {
 
@@ -31,27 +33,22 @@ class Home extends Component {
             .catch(err => { console.log(err) });
     }
 
+
+
     render() {
         return (
-            <div>
+            <div className='home-container'>
                 <h4 className="display-2">SPACE CAT PHOTOS</h4>
-                <div className="img-grid">
-                    {this.state.images.map(doc => (
-                        <div
-                            className='img-wrap'
-                            key={doc._id}
-                            onClick={() => this.setState({ selectedImage: doc.imageUrl, currentImage: { ...doc } })}
-                        ><h5>{doc.title}</h5>
-                            <img src={doc.imageUrl} alt='uploaded image' />
-                        </div>
-
+                <ul>
+                    {this.state.images.map(x => (
+                        <Nomination
+                            key={x._id}
+                            {...x}
+                        >
+                                
+                        </Nomination>
                     ))}
-                    {this.state.selectedImage && <Modal
-                        selectedImage={this.state.selectedImage}
-                        setSelectedImage={() => this.setState({ selectedImage: null })}
-                        imageData={this.state.currentImage} />}
-
-                </div>
+                </ul>
             </div>
         )
     }

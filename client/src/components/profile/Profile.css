@@ -2,3 +2,36 @@
     color: ivory;
     margin-top: 50px;
 }
+
+.nomination-li {
+    
+    float: left;
+    padding: 15px 15px;
+    height: 270px;
+    width: 270px;
+}
+
+.nomination-img {
+    width: 15rem;
+    height:10rem;
+    position: relative;
+    overflow: hidden;
+    padding: 0rem;
+    
+  }
+
+  p{
+      color:white;
+  }
+
+  .nomination-li button{
+      color: white;
+      background-color: rgba(37, 5, 63, 0.281);
+      border-radius: 4px;
+      transition-duration: 0.4s;
+  }
+
+  .nomination-li button:hover{
+    background-color: #ff7300; /* Green */
+    color: white;
+  }

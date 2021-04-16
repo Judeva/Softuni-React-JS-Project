@@ -38,14 +38,14 @@ const Profile = ({}) => {
            <ProfileCard uploads={nominations?.length}/>
             <h4 className="display-6">MY FILES</h4>
 
-            <div className="img-grid">
+            <ul>
                 {nominations?.map(doc => (
-                    <div className='img-wrap' key={doc._id}
-                    ><h5>{doc.title}</h5>
-                        <img src={doc.imageUrl} alt='uploaded image' />
-                    </div>
+                    <li className='nomination-li' key={doc._id}
+                    ><p>{doc.title}</p>
+                        <img className= 'nomination-img' src={doc.imageUrl} alt='uploaded image' />
+                    </li>
                 ))}
-            </div>
+            </ul>
             <Link to="/create" className="btn-go-home">UPLOAD PICTURE</Link>
         </div>
 
