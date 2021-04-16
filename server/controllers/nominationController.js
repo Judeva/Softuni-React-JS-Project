@@ -45,5 +45,13 @@ router.get('/:id', (req, res) => {
     .catch(err=>console.log(err));
 });
 
+router.delete('/:id', (req, res)=>{
+    Nomination.findByIdAndRemove({ _id: req.params.id })
+    .then(data=>{
+        res.send(data);
+    })
+    .catch(err=>console.log(err))
+    
+})
 
 module.exports = router;

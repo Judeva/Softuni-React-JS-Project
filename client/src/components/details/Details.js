@@ -31,9 +31,7 @@ const Details = ({
     return (
         <section className="details">
             <h3>{nomination.title}</h3>
-
             <p className="img"><img src={nomination.imageUrl} /></p>
-
             <div className="nomination-info">
                 <p className="description">Description: {nomination.description}</p>
                 <p className="creator">Creator: {nomination.creator}</p>
@@ -42,10 +40,6 @@ const Details = ({
                 <button className="button-like" >LIKE
                 </button>
             </div>
-
-
-
-
         </section>
     );
 };

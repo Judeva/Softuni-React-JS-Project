@@ -33,6 +33,7 @@
   }
 
   .nomination-li button:hover{
+     margin-top: 10px;
     background-color: #ff7300; /* Green */
     color: white;
   }
