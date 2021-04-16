@@ -10,8 +10,6 @@ const Profile = ({}) => {
     const user = useContext(AuthContext);
     const [nominations, setNominations] = useState(null);
     
-    console.log();
-
     useEffect(() => {
         let collection = [];
         axios.get('/nominations')

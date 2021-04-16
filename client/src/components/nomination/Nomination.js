@@ -9,23 +9,21 @@ const Nomination = ({
     creator,
     created,
     likes,
-    _id
+    _id,
+    props
 }) => {
 
-
+console.log(likes)
     return (
-
         <li className='nomination-li'>
-            <p>{title}</p>
+            <h6 className='title-paragraph'>{title}</h6>
             <img className='nomination-img'
                 src={imageUrl}
-                alt="photo"
-            ></img>
-            <Link to={`/nominations/${_id}}`}><button className="button">Details</button></Link>
+                alt="photo"            
+            ></img><p>Likes: {}</p>
+            <Link to={`/nominations/${_id}`}> <button className="button">See more...</button></Link>
         </li>
-
     );
-
 }
 
 export default Nomination;

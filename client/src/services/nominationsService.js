@@ -1,21 +1,30 @@
 import api from './api';
 import {toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
-import axios from 'axios';
 
 export const getAll = () => {
     return fetch(api.nominations)
         .then(res => res.json())
+        // .then(nominations=>nominations.map(x=>({...x, likes: Number(x.likes)})))
         .catch(err => console.log('Handled error:' + err));
 };
 
-export const updateOneById=(id)=>{
-    axios.patch('/nominations')
-    .then(res=>{
-        console.log(res.data)
-    }).catch(err=>{
-        console.log(err);
+export const getOne = (nominationId) => {
+    return fetch(`${api.nominations}/${nominationId}`)
+        .then(res =>res.json())
+        .catch(error => console.log(error));
+};
+
+export const like = (nominationId, likes) => {
+    return fetch(`${api.nominations}/${nominationId}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({likes})
     })
+        .then(res => res.json())
+        .catch(err=> console.log(err));
 }
 
 export const validateInput = (input) => {

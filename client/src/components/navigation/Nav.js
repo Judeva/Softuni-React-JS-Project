@@ -9,7 +9,6 @@ class Nav extends Component {
         return (
 
             <div className="nav">
-                {console.log(this.context.user)}
                 <NavLink to="/" className="nav-link">HOME</NavLink>
                 <NavLink to="/about" className="nav-link">ABOUT</NavLink>
                 {!this.context.user && <NavLink to="/register" className="nav-link">REGISTER</NavLink>}

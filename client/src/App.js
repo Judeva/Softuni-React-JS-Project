@@ -15,8 +15,8 @@ import Create from './components/create/Create';
 import Profile from './components/profile/Profile';
 import Error404 from './components/404/Error404';
 import AuthContext from './contexts/AuthContext';
+import Details from './components/details/Details'
 import 'react-toastify/dist/ReactToastify.css'
-import styled from 'styled-components'
 
 const App = () => {
 
@@ -48,7 +48,7 @@ const App = () => {
                 <Route path='/about' component={About} />
                 <Route path='/register' component={Register} />
                 <Route path='/nomination' component={Nomination} />
-                <Route path="/nomination/:_id" exact component={Details} />
+                <Route path='/nominations/:_id' exact component={Details}/>
                 <Route path='/create' component={Create} />
                 <Route path='/profile' component={Profile} />
                 <Route path='/logout'

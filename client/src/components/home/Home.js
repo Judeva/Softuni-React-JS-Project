@@ -2,7 +2,7 @@ import { Component } from 'react'
 import axios from 'axios';
 import './Home.css'
 import Nomination from '../nomination/Nomination';
-import { Link } from 'react-router-dom';
+import * as nominationsService from '../../services/nominationsService'
 
 
 class Home extends Component {
@@ -11,29 +11,18 @@ class Home extends Component {
         super(props);
         this.state = {
             images: [],
-            selectedImage: null,
-            currentImage: {}
         }
     }
 
     componentDidMount() {
 
-        let collection = [];
-        axios.get('/nominations')
+        nominationsService.getAll()
             .then(res => {
-                res.data.forEach(element => {
-                    collection.push(element);
-                });
-                return collection;
+                console.log(res)
+                this.setState({ images: res })
             })
-            .then(collection => {
-                console.log(collection)
-                this.setState({ images: collection })
-            })
-            .catch(err => { console.log(err) });
+            .catch(err => console.log(err));
     }
-
-
 
     render() {
         return (
@@ -42,11 +31,8 @@ class Home extends Component {
                 <ul>
                     {this.state.images.map(x => (
                         <Nomination
-                            key={x._id}
-                            {...x}
-                        >
-                                
-                        </Nomination>
+                            key={x._id}{...x}
+                        />
                     ))}
                 </ul>
             </div>

@@ -9,6 +9,7 @@
     padding: 15px 15px;
     height: 270px;
     width: 270px;
+    margin-top: 15px;
 }
 
 .nomination-img {
@@ -21,14 +22,14 @@
   }
 
   p{
-      color:white;
+    color: rgba(255, 255, 255, 0.527);
   }
 
   .nomination-li button{
       color: white;
       background-color: rgba(37, 5, 63, 0.281);
       border-radius: 4px;
-      transition-duration: 0.4s;
+      transition-duration: 0.4s;    
   }
 
   .nomination-li button:hover{

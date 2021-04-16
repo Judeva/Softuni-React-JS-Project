@@ -6,8 +6,8 @@ const nominationService = require('../services/nominationService');
 
 
 router.post('/', (req, res) => {
-    
-    
+
+
     const { title, description, imageUrl, created, creator } = req.body;
 
     let nomination = {
@@ -28,12 +28,22 @@ router.post('/', (req, res) => {
 
 });
 
-router.get('/', (req, res)=>{
-     nominationService.getAll()
+router.get('/', (req, res) => {
+    nominationService.getAll()
+        .then(data => {
+            res.send(data);
+        })
+});
+
+router.get('/:id', (req, res) => {
+    
+    console.log(req.params.id);
+    Nomination.findById({ _id: req.params.id })
     .then(data=>{
-        res.send(data);
+        res.send(data)
     })
-})
+    .catch(err=>console.log(err));
+});
 
 
 module.exports = router;

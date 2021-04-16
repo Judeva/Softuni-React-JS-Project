@@ -1,0 +1,19 @@
+h3{
+    color:rgba(255, 255, 255, 0.603);
+}
+
+img{
+    max-height: 600px ;
+}
+
+.button-like{
+     width: 100px;
+    color: white;
+    background-color: rgba(37, 5, 63, 0.281);
+    border-radius: 7px;
+    transition-duration: 0.4s;    
+}
+.button-like:hover{
+    background-color: #ff7300; /* Green */
+    color: white;
+  }
