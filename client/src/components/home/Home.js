@@ -18,8 +18,7 @@ class Home extends Component {
 
         nominationsService.getAll()
             .then(res => {
-                console.log(res)
-                this.setState({ images: res })
+              this.setState({ images: res })
             })
             .catch(err => console.log(err));
     }

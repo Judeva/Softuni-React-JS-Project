@@ -13,7 +13,6 @@ const Nomination = ({
     props
 }) => {
 
-console.log(likes)
     return (
         <li className='nomination-li'>
             <h6 className='title-paragraph'>{title}</h6>

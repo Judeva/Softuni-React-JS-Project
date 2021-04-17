@@ -5,7 +5,6 @@ import 'react-toastify/dist/ReactToastify.css'
 export const getAll = () => {
     return fetch(api.nominations)
         .then(res => res.json())
-        // .then(nominations=>nominations.map(x=>({...x, likes: Number(x.likes)})))
         .catch(err => console.log('Handled error:' + err));
 };
 

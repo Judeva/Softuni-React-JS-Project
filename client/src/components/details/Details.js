@@ -1,6 +1,5 @@
 import { useEffect, useState, useContext } from 'react';
 import { ToastContainer, toast } from "react-toastify";
-import { Link } from 'react-router-dom';
 import AuthContext from '../../contexts/AuthContext';
 import * as nominationsService from '../../services/nominationsService'
 import './Details.css'
@@ -21,28 +20,23 @@ const Details = ({
                 setLikes(res.likes)
             });
     }, []);
-    console.log(user.user);
+
     const onLikeButtonClickHandler = () => {
 
         let currentLikes = likes;
-
 
         if (!currentLikes.includes(user.user)) {
             currentLikes.push(user.user);
             nominationsService.like(match.params._id, currentLikes)
                 .then((updatedNomination) => {
-                    console.log(updatedNomination)
                     setNomination(state => ({ ...state, likes: Number(updatedNomination.likes) }))
                 }).catch(err => {
                     console.log(err);
                 })
-
         } else (
             toast.warning('You liked this already!')
         )
-
     };
-
 
     return (
         <section className="details">

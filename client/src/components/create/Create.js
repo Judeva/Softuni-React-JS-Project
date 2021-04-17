@@ -41,7 +41,7 @@ const Create = ({
     const handleFireBaseUpload = e => {
         e.preventDefault();
 
-        if (imageAsFile&&imageAsFile) {
+        if (imageAsFile && imageAsFile) {
             const uploadTask = storage.ref(`/images/${imageAsFile.name}`).put(imageAsFile);
             uploadTask.on("state_changed", console.log, console.error, () => {
                 storage
@@ -75,7 +75,7 @@ const Create = ({
         e.preventDefault()
 
         const creationDate = moment(Date(imageAsFile?.lastModifiedDate)).format('lll');
-       
+
         const newNomination = {
             title: input.title,
             description: input.description,
@@ -85,7 +85,6 @@ const Create = ({
             likes: []
         }
 
-
         validateInput(newNomination);
 
         axios.post('/create', newNomination)
@@ -94,7 +93,7 @@ const Create = ({
             })
             .catch(err => {
                 toast.error(err.message);
-            })
+            });
     }
 
     return (
