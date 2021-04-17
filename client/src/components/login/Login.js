@@ -3,6 +3,7 @@ import { auth } from '../../firebase/firebase'
 import './Login.css';
 import {ToastContainer, toast} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
+import { validateAuthInput } from "../../services/authService";
 
 const Login = ({
     history
@@ -15,6 +16,8 @@ const Login = ({
     const onLoginSubmitHandler = (e) => {
 
         e.preventDefault();
+
+        validateAuthInput(username, password);
 
         auth.signInWithEmailAndPassword(username, password)
             .then(userCredentials => {

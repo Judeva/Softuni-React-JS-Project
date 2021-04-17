@@ -20,7 +20,7 @@ console.log(likes)
             <img className='nomination-img'
                 src={imageUrl}
                 alt="photo"            
-            ></img><p>Likes: {}</p>
+            ></img>
             <Link to={`/nominations/${_id}`}> <button className="button">See more...</button></Link>
         </li>
     );

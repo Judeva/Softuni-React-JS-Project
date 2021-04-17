@@ -4,22 +4,21 @@ import ErrorBox from "../errorBox/ErrorBox";
 import './Register.css';
 import {ToastContainer, toast} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
+import { validateAuthInput } from "../../services/authService";
 
 const Register = ({
     history
 }) => {
 
-    const [username, setUsername] = useState();
-    const [password, setPassword] = useState();
-    const [rePassword, setRePassword] = useState();
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [rePassword, setRePassword] = useState('');
     
     const onRegisterSubmitHandler = (e) => {
 
         e.preventDefault();
 
-        if (password !== rePassword) {
-            return toast.error('Passwords should match!')
-        }
+        validateAuthInput(username, password, rePassword);
 
         auth.createUserWithEmailAndPassword(username, password)
             .then(userCredentials => {

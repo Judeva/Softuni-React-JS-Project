@@ -26,7 +26,7 @@ const Profile = ({ }) => {
                 setNominations(collection)
             })
             .catch(err => { console.log(err) });
-    }, [nominations]);
+    }, []);
 
     const handleDeleteButtonClick = (id) => {
         axios.delete(`/nominations/${id}`)
@@ -42,7 +42,7 @@ const Profile = ({ }) => {
             <h4 className="display-6">USER INFO</h4>
             <ProfileCard uploads={nominations?.length} />
             <h4 className="display-6">MY FILES</h4>
-            <ul>
+            <ul className ='home-ul'>
                 {nominations && nominations.map(doc => (
                     <li className='nomination-li' key={doc._id}
                     ><p>{doc.title}</p>

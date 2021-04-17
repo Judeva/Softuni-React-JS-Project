@@ -28,7 +28,7 @@ class Home extends Component {
         return (
             <div className='home-container'>
                 <h4 className="display-2">SPACE CAT PHOTOS</h4>
-                <ul>
+                <ul className='home-ul'>
                     {this.state.images.map(x => (
                         <Nomination
                             key={x._id}{...x}

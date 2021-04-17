@@ -4,16 +4,15 @@
 }
 
 .nomination-li {
-    
     float: left;
-    padding: 15px 15px;
     height: 270px;
     width: 270px;
     margin-top: 15px;
+    margin-bottom: 30px;
 }
 
 .nomination-img {
-    width: 15rem;
+    width: 100%;
     height:10rem;
     position: relative;
     overflow: hidden;
@@ -29,7 +28,7 @@
       color: white;
       background-color: rgba(37, 5, 63, 0.281);
       border-radius: 4px;
-      transition-duration: 0.4s;    
+      transition-duration: 0.4s;   
   }
 
   .nomination-li button:hover{
@@ -37,3 +36,17 @@
     background-color: #ff7300; /* Green */
     color: white;
   }
+
+  .btn-go-home:hover{
+    background-color: #FFCB39;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0px 20px 20px rgba(0,0,0,0.1);
+}
+
+.home-ul{
+  list-style-type:none;
+  overflow: hidden;
+  display:block; 
+  align-items: center; 
+}

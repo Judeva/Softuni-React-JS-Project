@@ -73,20 +73,10 @@ html, body{
     overflow: hidden;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 5%10%5%10%;
-    padding-left: 10%;
-    overflow: hidden;
-    display:block; 
-    align-items: center; 
-}
-
 li {
     
     float: left;
-    padding: 0px 15px;
+    padding:  15px;
     height: 270px;
 }
 
@@ -115,17 +105,10 @@ li {
     transition: all 0.3s ease-in;
 }
 
-.btn-go-home:hover{
-    background-color: #FFCB39;
-    color: #fff;
-    transform: scale(1.05);
-    box-shadow: 0px 20px 20px rgba(0,0,0,0.1);
-}
-
 .central-body{
     height:auto;
     width: auto;
-    padding: 3% 5% 10% 5%;
+    padding: 5% 20% 5% 20%;
     text-align: center;
 }
 
