@@ -26,7 +26,7 @@ const Profile = ({ }) => {
                 setNominations(collection)
             })
             .catch(err => { console.log(err) });
-    }, []);
+    }, [nominations]);
 
     const handleDeleteButtonClick = (id) => {
         axios.delete(`/nominations/${id}`)

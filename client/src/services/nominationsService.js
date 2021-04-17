@@ -15,13 +15,13 @@ export const getOne = (nominationId) => {
         .catch(error => console.log(error));
 };
 
-export const like = (nominationId, likes) => {
+export const like = (nominationId, currentlikes) => {
     return fetch(`${api.nominations}/${nominationId}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({likes})
+        body: JSON.stringify({likes: currentlikes})
     })
         .then(res => res.json())
         .catch(err=> console.log(err));

@@ -18,7 +18,10 @@ const Register = ({
 
         e.preventDefault();
 
-        validateAuthInput(username, password, rePassword);
+        if (password !== rePassword) {
+            return toast.error('Passwords should match!')
+        }
+        validateAuthInput(username, password);
 
         auth.createUserWithEmailAndPassword(username, password)
             .then(userCredentials => {

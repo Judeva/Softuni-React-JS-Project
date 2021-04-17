@@ -1,9 +1,8 @@
-const { response } = require('express');
+const { response, Router } = require('express');
 const express = require('express');
 let router = express.Router();
 const Nomination = require('../models/Nomination');
 const nominationService = require('../services/nominationService');
-
 
 router.post('/', (req, res) => {
 
@@ -54,4 +53,18 @@ router.delete('/:id', (req, res)=>{
     
 })
 
+router.patch('/:id', (req, res)=>{
+
+    console.log('this is req body likes'+"   "+ req.body.likes);
+    console.log(req.params.id)
+    Nomination.findOneAndUpdate ( 
+        {'_id': req.params.id},
+        {'likes': req.body.likes}    
+    ).then(updatedObj=>{
+        console.log( 'This is updated Object'+ updatedObj)
+        res.send(updatedObj);
+    }).catch(err=>{
+        console.log(err);
+    });
+})
 module.exports = router;
