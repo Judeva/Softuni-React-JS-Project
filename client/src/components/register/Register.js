@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { auth } from '../../firebase/firebase'
-import ErrorBox from "../errorBox/ErrorBox";
-import './Register.css';
-import {ToastContainer, toast} from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer, toast } from "react-toastify";
 import { validateAuthInput } from "../../services/authService";
+import './Register.css';
+import 'react-toastify/dist/ReactToastify.css'
 
 const Register = ({
     history
@@ -13,7 +12,7 @@ const Register = ({
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [rePassword, setRePassword] = useState('');
-    
+
     const onRegisterSubmitHandler = (e) => {
 
         e.preventDefault();
@@ -27,7 +26,7 @@ const Register = ({
             .then(userCredentials => {
                 history.push('/');
             }).catch(err => {
-               toast.error(err.message)
+                toast.error(err.message)
                 console.log(err);
             })
     }
@@ -35,7 +34,7 @@ const Register = ({
     return (
         <div className='register'>
             <h2 className="display-2">REGISTER</h2>
-            <ToastContainer/>
+            <ToastContainer />
             <form onSubmit={onRegisterSubmitHandler}>
                 <label
                     htmlFor="Username"

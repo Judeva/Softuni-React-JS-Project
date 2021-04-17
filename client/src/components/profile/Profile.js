@@ -4,7 +4,6 @@ import { useContext, useState, useEffect } from 'react';
 import AuthContext from '../../contexts/AuthContext';
 import axios from 'axios'
 import ProfileCard from './profileCrad/ProfileCard';
-import { IoTrashOutline } from 'react-icons/ai'
 
 const Profile = ({ }) => {
 

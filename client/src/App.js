@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
-import './App.css';
 import { auth } from './firebase/firebase';
-//import * as nominationsService from './services/nominationsService';
 
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
@@ -16,7 +14,9 @@ import Profile from './components/profile/Profile';
 import Error404 from './components/404/Error404';
 import AuthContext from './contexts/AuthContext';
 import Details from './components/details/Details'
-import 'react-toastify/dist/ReactToastify.css'
+
+import 'react-toastify/dist/ReactToastify.css';
+import './App.css';
 
 const App = () => {
 

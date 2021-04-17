@@ -1,0 +1,33 @@
+.search-div{
+    margin: 40px;
+    overflow:hidden;
+       
+}
+
+.search-div input{
+    border-radius: 25px;
+    width: 280px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    border: solid 1px;
+    border-color: white;
+    text-align: center;
+    outline:none;
+}
+
+*:focus {
+    outline: none;
+}
+
+.search-div img{
+    height: 25px;
+    width:auto;
+    cursor: pointer;
+    margin-left: 15px;
+    opacity: 0.5;
+}
+
+.search-div img:hover{
+   opacity: 1;
+}
