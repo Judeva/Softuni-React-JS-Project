@@ -1,0 +1,18 @@
+.dropdown label{
+    color: white;
+    margin-right: 20px;
+}
+
+.dropdown select{
+background-color: rgb(67, 45, 98);
+height: 45px;
+width: 150px;
+border: solid white 1px;
+color: rgba(255, 255, 255, 0.596);
+border-radius: 25px;
+padding: 10px;
+}
+
+.dropdown option{
+    color: white;
+}
