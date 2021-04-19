@@ -19,27 +19,29 @@ class Home extends Component {
 
         nominationsService.getAll()
             .then(res => {
-              this.setState({ images: res })
+                this.setState({ images: res })
             })
             .catch(err => console.log(err));
     }
 
-   
+    search = (filter) => {
+        this.setState({images: filter});
+    }
+
     render() {
         return (
-            <CollectionContext.Provider value={this.state.images}>
-            <div className='home-container'>
-                <h4 className="display-2">SPACE CAT PHOTOS</h4>
-                <Search
-                setState ={this.setState()}/>
-                <ul className='home-ul'>
-                    {this.state.images.map(x => (
-                        <Nomination
-                            key={x._id}{...x}
-                        />
-                    ))}
-                </ul>
-            </div>
+            <CollectionContext.Provider value={{ ...this.state, search: this.search }}>
+                <div className='home-container'>
+                    <h4 className="display-2">SPACE CAT PHOTOS</h4>
+                    <Search />
+                    <ul className='home-ul'>
+                        {this.state.images.map(x => (
+                            <Nomination
+                                key={x._id}{...x}
+                            />
+                        ))}
+                    </ul>
+                </div>
             </CollectionContext.Provider>
         )
     }

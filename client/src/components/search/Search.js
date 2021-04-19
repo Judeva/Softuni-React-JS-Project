@@ -1,22 +1,26 @@
 import './Search.css'
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { ToastContainer, toast } from "react-toastify";
 import CollectionContext from '../../contexts/CollectionContext';
+
 const Search = ({
-    
+
 }) => {
 
- 
     const [searchInput, setSearchInput] = useState("");
-   
+    const {images, search} = useContext(CollectionContext);
+
+    
     const onSearchClickHandler = (searchInput) => {
-        setSearchInput("");
-       toast.info('Comming soon :)')
+        let filter = images.filter(x=>x.title.includes(searchInput)||x.description.includes(searchInput));
+        console.log(filter);
+        search(filter);
+        setSearchInput('');
     }
 
     return (
         <div className='search-div'>
-            <ToastContainer/>
+            <ToastContainer />
             <input
                 type='text'
                 placeholder='Search...'
@@ -24,7 +28,7 @@ const Search = ({
                 onChange={(e) => setSearchInput(e.target.value)} />
             <img
                 src='https://firebasestorage.googleapis.com/v0/b/cat-chasing-tail.appspot.com/o/search-icon.png?alt=media&token=f387d25e-d1a0-4f18-8948-379bcd0e6e42'
-                onClick={(e)=>onSearchClickHandler(searchInput)} />
+                onClick={(e) => onSearchClickHandler(searchInput)} />
         </div>
     );
 }
