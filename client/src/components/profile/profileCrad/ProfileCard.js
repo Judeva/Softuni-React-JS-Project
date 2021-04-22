@@ -13,7 +13,8 @@ const ProfileCard = ({
 
         <div className="card">
             
-            <img src='https://firebasestorage.googleapis.com/v0/b/cat-chasing-tail.appspot.com/o/avatar.png?alt=media&token=6668e252-a575-42f5-bb7d-90f26e40f0db'/>
+            <img src='https://firebasestorage.googleapis.com/v0/b/cat-chasing-tail.appspot.com/o/avatar.png?alt=media&token=6668e252-a575-42f5-bb7d-90f26e40f0db'
+            alt='avatar'/>
             <h2>{user.user}</h2>
             <p className="title">Photographer</p>
             <h4 className="display-8">Uploaded photos: {uploads} </h4>

@@ -3,9 +3,7 @@ import { useContext, useState } from 'react';
 import CollectionContext from '../../contexts/CollectionContext';
 
 
-const Search = ({
-
-}) => {
+const Search = () => {
 
     const [searchInput, setSearchInput] = useState("");
     const { images, search } = useContext(CollectionContext);
@@ -34,7 +32,8 @@ const Search = ({
                 onChange={(e) => setSearchInput(e.target.value)} />
             <img
                 src='https://firebasestorage.googleapis.com/v0/b/cat-chasing-tail.appspot.com/o/search-icon.png?alt=media&token=f387d25e-d1a0-4f18-8948-379bcd0e6e42'
-                onClick={(e) => onSearchClickHandler(searchInput)} />
+                onClick={(e) => onSearchClickHandler(searchInput)}
+                alt='lupa' />
         </div>
     );
 }

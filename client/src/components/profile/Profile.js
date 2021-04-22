@@ -5,7 +5,7 @@ import AuthContext from '../../contexts/AuthContext';
 import axios from 'axios'
 import ProfileCard from './profileCrad/ProfileCard';
 
-const Profile = ({ }) => {
+const Profile = () => {
 
     const user = useContext(AuthContext);
     const [nominations, setNominations] = useState(null);
@@ -15,7 +15,7 @@ const Profile = ({ }) => {
         axios.get('/nominations')
             .then(res => {
                 res.data.forEach(element => {
-                    if (element.creator == user.user) {
+                    if (element.creator === user.user) {
                         collection.push(element);
                     }
                 });
@@ -25,12 +25,13 @@ const Profile = ({ }) => {
                 setNominations(collection)
             })
             .catch(err => { console.log(err) });
-    }, [nominations]);
+    }, [nominations, user.user]);
 
     const handleDeleteButtonClick = (id) => {
         axios.delete(`/nominations/${id}`)
-            .then(res => { 
-                console.log(res) })
+            .then(res => {
+                console.log(res)
+            })
             .catch(err => { console.log(err) })
     }
 
@@ -41,11 +42,11 @@ const Profile = ({ }) => {
             <h4 className="display-6">USER INFO</h4>
             <ProfileCard uploads={nominations?.length} />
             <h4 className="display-6">MY FILES</h4>
-            <ul className ='home-ul'>
+            <ul className='home-ul'>
                 {nominations && nominations.map(doc => (
                     <li className='nomination-li' key={doc._id}
                     ><p>{doc.title}</p>
-                        <img className='nomination-img' src={doc.imageUrl} alt='uploaded image' />
+                        <img className='nomination-img' src={doc.imageUrl} alt='uploaded' />
                         <button
                             onClick={() => handleDeleteButtonClick(doc._id)}>Delete</button>
                     </li>

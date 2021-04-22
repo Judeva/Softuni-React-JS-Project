@@ -19,7 +19,7 @@ const Details = ({
                 setNomination(res)
                 setLikes(res.likes)
             });
-    }, []);
+    }, [match.params._id]);
 
     const onLikeButtonClickHandler = () => {
 
@@ -42,7 +42,7 @@ const Details = ({
         <section className="details">
             <ToastContainer></ToastContainer>
             <h3>{nomination.title}</h3>
-            <p className="img"><img src={nomination.imageUrl} /></p>
+            <p className="img"><img src={nomination.imageUrl} alt='uploaded' /></p>
             <div className="nomination-info">
                 <p className="description">Description: {nomination.description}</p>
                 <p className="creator">Creator: {nomination.creator}</p>

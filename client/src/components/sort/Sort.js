@@ -2,9 +2,7 @@ import './Sort.css'
 import { useContext, useState } from 'react';
 import CollectionContext from '../../contexts/CollectionContext';
 
-const Sort = ({
-
-}) => {
+const Sort = () => {
 
     const [sorting, setSorting] = useState();
     const { sort } = useContext(CollectionContext);

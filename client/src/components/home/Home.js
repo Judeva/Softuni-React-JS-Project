@@ -31,11 +31,11 @@ class Home extends Component {
 
     handleSortClick = (sorting) => {
         console.log(sorting)
-        if (sorting == 'topRated') {
+        if (sorting === 'topRated') {
             console.log(this.state.images)
             this.setState({ images: this.state.images.sort((a, b) => a.likes.length - b.likes.length).reverse()});
 
-        } else if (sorting == 'newest') {
+        } else if (sorting === 'newest') {
             this.setState({ images: this.state.images.reverse()});
         }
     }

@@ -1,9 +1,8 @@
-import api from './api';
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
 
 
-export const validateAuthInput = (username, password, rePassword) => {
+export const validateAuthInput = (username, password) => {
    
     if (!username) {
         return toast.error('Please, fill in username')
