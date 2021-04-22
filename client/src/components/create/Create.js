@@ -76,6 +76,7 @@ const Create = ({
 
         const creationDate = moment(Date(imageAsFile?.lastModifiedDate)).format('lll');
 
+        console.log(creationDate);
         const newNomination = {
             title: input.title,
             description: input.description,

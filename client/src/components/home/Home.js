@@ -29,36 +29,23 @@ class Home extends Component {
         this.setState({ images: filter });
     }
 
-    handleSortClick = () => {
-        console.log(this.state.sorting)
-        if (this.state.sorting == 'topRated') {
+    handleSortClick = (sorting) => {
+        console.log(sorting)
+        if (sorting == 'topRated') {
             console.log(this.state.images)
             this.setState({ images: this.state.images.sort((a, b) => a.likes.length - b.likes.length).reverse()});
 
-        } else if (this.state.sorting == 'newest') {
+        } else if (sorting == 'newest') {
             this.setState({ images: this.state.images.reverse()});
         }
     }
 
-
 render() {
     return (
-        <CollectionContext.Provider value={{ ...this.state, search: this.search }}>
+        <CollectionContext.Provider value={{ ...this.state, search: this.search, sort: this.handleSortClick} }>
             <div className='home-container'>
                 <h4 className="display-2">SPACE CAT PHOTOS</h4>
-                <Search />
-                <div className='dropdown'>
-                    <label htmlFor='sort'>Sort by:</label>
-                    <select
-                        value={this.state.sorting}
-                        name="sort"
-                        onChange={(e) => this.setState({ sorting: e.target.value })}
-                        onClick={this.handleSortClick}
-                        >
-                        <option  value="newest">Newest</option>
-                        <option  value="topRated">Top rated</option>
-                    </select>
-                </div>
+                <Search/><Sort/>
                 <ul className='home-ul'>
                     {this.state.images.map(x => (
                         <Nomination

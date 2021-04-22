@@ -1,39 +1,32 @@
 import './Search.css'
 import { useContext, useState } from 'react';
-import { ToastContainer, toast } from "react-toastify";
 import CollectionContext from '../../contexts/CollectionContext';
-import * as nominationsService from '../../services/nominationsService';
+
 
 const Search = ({
-    history
+
 }) => {
 
     const [searchInput, setSearchInput] = useState("");
-    const {search} = useContext(CollectionContext);
+    const { images, search } = useContext(CollectionContext);
 
     const onSearchClickHandler = (searchInput) => {
 
         let searchText = searchInput.toLowerCase();
-        let images = [];
-        
-        nominationsService.getAll()
-            .then(res => {
-                res.filter(x =>
-                    x.title.toLowerCase()
-                        .includes(searchText) ||
-                    x.description.toLowerCase()
-                        .includes(searchText) ||
-                    x.creator.toLowerCase()
-                        .includes(searchText))
-                        
-            }).then(res=>search(res)).catch(err => console.log(err));
+        let filter = images.filter(x =>
+            x.title.toLowerCase()
+                .includes(searchText) ||
+            x.description.toLowerCase()
+                .includes(searchText) ||
+            x.creator.toLowerCase()
+                .includes(searchText))
 
+        search(filter);
         setSearchInput('');
     }
 
     return (
         <div className='search-div'>
-            <ToastContainer />
             <input
                 type='text'
                 placeholder='Search...'
