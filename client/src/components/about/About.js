@@ -1,5 +1,5 @@
-import SimpleMap from '../googleMaps/SimpleMap'
-import './About.css'
+import SimpleMap from '../googleMaps/SimpleMap';
+import './About.css';
 
 const About = () => {
 

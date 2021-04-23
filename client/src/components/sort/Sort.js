@@ -1,6 +1,6 @@
-import './Sort.css'
 import { useContext, useState } from 'react';
 import CollectionContext from '../../contexts/CollectionContext';
+import './Sort.css';
 
 const Sort = () => {
 

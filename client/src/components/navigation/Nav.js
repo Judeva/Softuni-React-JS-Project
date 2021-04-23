@@ -1,7 +1,7 @@
 import { Component } from 'react'
-import './Nav.css'
 import { NavLink } from 'react-router-dom'
 import AuthContext from '../../contexts/AuthContext'
+import './Nav.css';
 
 class Nav extends Component {
 

@@ -1,11 +1,10 @@
 import { Component } from 'react';
 import CollectionContext from '../../contexts/CollectionContext';
-import './Home.css';
-import Nomination from '../nomination/Nomination';
 import * as nominationsService from '../../services/nominationsService';
+import Nomination from '../nomination/Nomination';
 import Search from '../search/Search';
 import Sort from '../sort/Sort';
-
+import './Home.css';
 
 class Home extends Component {
 

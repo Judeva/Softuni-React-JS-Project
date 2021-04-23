@@ -1,7 +1,6 @@
-import './Search.css'
 import { useContext, useState } from 'react';
 import CollectionContext from '../../contexts/CollectionContext';
-
+import './Search.css';
 
 const Search = () => {
 

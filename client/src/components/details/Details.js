@@ -1,8 +1,8 @@
 import { useEffect, useState, useContext } from 'react';
 import { ToastContainer, toast } from "react-toastify";
 import AuthContext from '../../contexts/AuthContext';
-import * as nominationsService from '../../services/nominationsService'
-import './Details.css'
+import * as nominationsService from '../../services/nominationsService';
+import './Details.css';
 
 
 const Details = ({

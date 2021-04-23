@@ -1,6 +1,6 @@
-import { Component } from 'react'
-import Nav from '../navigation/Nav'
-import './Header.css'
+import { Component } from 'react';
+import Nav from '../navigation/Nav';
+import './Header.css';
 
 class Header extends Component {
 

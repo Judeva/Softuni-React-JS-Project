@@ -3,7 +3,7 @@ import { auth } from '../../firebase/firebase'
 import { ToastContainer, toast } from "react-toastify";
 import { validateAuthInput } from "../../services/authService";
 import './Register.css';
-import 'react-toastify/dist/ReactToastify.css'
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = ({
     history
@@ -20,6 +20,7 @@ const Register = ({
         if (password !== rePassword) {
             return toast.error('Passwords should match!')
         }
+        
         validateAuthInput(username, password);
 
         auth.createUserWithEmailAndPassword(username, password)

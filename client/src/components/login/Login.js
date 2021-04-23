@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { auth } from '../../firebase/firebase'
-import './Login.css';
+import { auth } from '../../firebase/firebase';
 import {ToastContainer, toast} from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css'
 import { validateAuthInput } from "../../services/authService";
+import './Login.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = ({
     history
@@ -11,7 +11,6 @@ const Login = ({
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    
 
     const onLoginSubmitHandler = (e) => {
 
@@ -25,10 +24,8 @@ const Login = ({
                 history.push('/')
             }).catch(err => {
                 if(err){
-                    console.log(err.message)
                     toast.error(err.message)
                 }
-                console.log(err);
             });
     }
 

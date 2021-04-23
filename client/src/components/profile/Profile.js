@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom'
-import './Profile.css';
 import { useContext, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+import axios from 'axios';
 import AuthContext from '../../contexts/AuthContext';
-import axios from 'axios'
 import ProfileCard from './profileCrad/ProfileCard';
+import './Profile.css';
 
 const Profile = () => {
 
