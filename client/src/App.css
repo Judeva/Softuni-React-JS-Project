@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis:300,400,500');
 
-@-moz-keyframes rocket-movement { 100% {-moz-transform: translate(1200px,-600px);} }
-@-webkit-keyframes rocket-movement {100% {-webkit-transform: translate(1200px,-600px); } }
-@keyframes rocket-movement { 100% {transform: translate(1200px,-600px);} }
 @-moz-keyframes spin-earth { 100% { -moz-transform: rotate(-360deg); transition: transform 10s;  } }
 @-webkit-keyframes spin-earth { 100% { -webkit-transform: rotate(-360deg); transition: transform 10s;  } }
 @keyframes spin-earth{ 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); transition: transform 10s; } }
@@ -116,15 +113,6 @@ li {
     pointer-events: none;
 }
 
-.object_rocket{
-    z-index: 95;
-    position: absolute;
-    transform: translateX(-50px);
-    top: 75%;
-    pointer-events: none;
-    animation: rocket-movement 200s linear infinite both running;
-}
-
 .object_earth{
     position: absolute;
     top: 20%;
@@ -141,10 +129,6 @@ li {
     transition: transform ease-in 99999999999s;
     
 }
-
-/* .earth-moon{
-    
-} */
 
 .object_astronaut{
     animation: rotate-astronaut 200s infinite linear both alternate;

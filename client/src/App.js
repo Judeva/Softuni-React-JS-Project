@@ -60,7 +60,6 @@ const App = () => {
               </Switch>
               {/* Social distance */}
               <div className="objects">
-                <img className="object_rocket" src="http://salehriaz.com/404Page/img/rocket.svg" width="60px" alt='rocket' />
                 <div className="earth-moon">
                   <img className="object_earth" src="http://salehriaz.com/404Page/img/earth.svg" width="100px" alt='earth' />
                   <img className="object_moon" src="http://salehriaz.com/404Page/img/moon.svg" width="80px" alt='moon' />
